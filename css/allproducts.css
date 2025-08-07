@@ -1,0 +1,162 @@
+/* Page-specific hero section for All Products */
+.page-intro {
+  background-image: url("../images/wood-backdrop.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.page-intro h1 {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.page-intro p {
+  color: var(--color-text);
+}
+
+/* Product grid layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+/* Product cards */
+.product-card {
+  background-color: #5a5a5a;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 1rem;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.product-card h2 {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin: 0;
+  min-height: 4rem;
+}
+
+.product-card p,
+.product-card .price,
+.product-card .button {
+  margin-top: auto;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.product-card .price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.product-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card-link .button {
+  pointer-events: none;
+}
+
+.product-card .button {
+  margin-top: auto;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-main);
+  color: var(--color-text);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.product-card .button:hover {
+  background-color: var(--color-main-dark);
+}
+
+/* Custom section */
+.custom-callout {
+  background-color: #4b4b4b;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: var(--radius-md);
+  margin-bottom: 4rem;
+}
+
+.custom-callout h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.custom-callout p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.custom-callout .button {
+  background-color: var(--color-main);
+  color: var(--color-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.custom-callout .button:hover {
+  background-color: var(--color-main-dark);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .product-card h2 {
+    font-size: 1rem;
+    min-height: auto;
+  }
+
+  .product-card p {
+    font-size: 0.9rem;
+  }
+
+  .custom-callout h2 {
+    font-size: 1.5rem;
+  }
+
+  .custom-callout p {
+    font-size: 1rem;
+  }
+}

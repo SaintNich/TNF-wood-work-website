@@ -1,0 +1,332 @@
+/* Product Page Layout */
+.product-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.product-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  background-color: transparent;
+}
+
+.product-hero .inner-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  margin: 0 auto;
+}
+
+/* Product Gallery */
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex-shrink: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.thumbnail-gallery {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: var(--color-bg);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.thumbnail-gallery img {
+  width: 60px;
+  opacity: 0.5;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.thumbnail-gallery img:hover,
+.thumbnail-gallery img.selected {
+  opacity: 1;
+}
+
+/* Product Info */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: left;
+  flex-shrink: 1;
+}
+
+.product-info h1 {
+  text-align: center;
+}
+
+.product-info .price {
+  font-weight: bold;
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  font-style: italic;
+}
+
+.product-info .short-description {
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+/* Form Elements */
+.product-page form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-2);
+}
+
+.form-row-inline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: var(--space-4);
+}
+
+.form-row-inline label {
+  margin-bottom: 0;
+}
+
+.form-row-inline select,
+#custom-details input[type="text"] {
+  flex: 1;
+  min-width: 250px;
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 0.25rem;
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius-md);
+}
+
+#custom-details input[type="file"]::-webkit-file-upload-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-main);
+  color: white;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#file-upload-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-2);
+  gap: var(--space-1);
+}
+
+#engraving-file {
+  margin: 0 auto;
+}
+
+.submit-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-main);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #003a8c;
+}
+
+/* Product Details & Shipping */
+.product-details,
+.shipping-returns {
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  line-height: 1.6;
+  font-size: var(--text-base);
+  color: var(--color-dark);
+  margin-bottom: var(--space-6);
+}
+
+.product-details h2,
+.shipping-returns h3,
+.shipping-returns h4 {
+  margin-bottom: var(--space-2);
+  font-weight: bold;
+}
+
+.product-details ul,
+.shipping-returns ul {
+  padding-left: var(--space-4);
+  list-style-type: disc;
+}
+
+.product-details ul {
+  margin-bottom: var(--space-4);
+}
+
+.shipping-returns summary {
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+  margin-bottom: var(--space-3);
+  background-color: var(--color-main);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.shipping-returns summary:hover {
+  background-color: #003a8c;
+}
+
+.shipping-returns summary h3 {
+  display: inline;
+  font-size: 1.5em;
+}
+
+.shipping-returns[open] summary::after {
+  content: "▲";
+  float: right;
+  font-size: 0.75rem;
+  margin-left: var(--space-2);
+}
+
+.shipping-returns summary::after {
+  content: "▼";
+  float: right;
+  font-size: 0.75rem;
+  margin-left: var(--space-2);
+}
+
+.policy-contents p,
+.policy-contents ul {
+  margin-bottom: var(--space-2);
+}
+
+.policy-contents a {
+  text-decoration: none;
+}
+
+/* Responsive Layout Tweaks */
+@media (max-width: 1200px) {
+  .product-info .short-description,
+  .product-info h1 {
+    text-align: center;
+  }
+
+  .product-info h1 {
+    font-size: 1.75rem;
+  }
+
+  .product-hero .inner-container {
+    gap: var(--space-4);
+  }
+
+  .form-row-inline {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .form-row-inline label,
+  .form-row-inline select,
+  #custom-details input[type="text"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #custom-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+  }
+
+  #custom-details label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  #engraving-file {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .thumbnail-gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-hero .inner-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    height: auto;
+  }
+
+  .product-gallery, .product-info {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .main-image img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .thumbnail-gallery img {
+    width: 48px;
+  }
+}

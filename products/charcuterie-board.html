@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Charcuterie Board - Built to Impress, Crafted to Last | TNF Wood Work
+    </title>
+    <meta
+      name="description"
+      content="Handcrafted charcuterie board in oak, cedar, or walnut. Food-safe finish, three sizes, optional engraving. Built to serve and made to last." />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../images/TNF Wood Work Logo (Favicon).png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;800&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/hero.css" />
+    <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/charcuterie.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="headerlogo">
+        <a href="../index.html"
+          ><img src="../images/TNF Wood Work Logo.svg" alt="TNF Wood Work logo"
+        /></a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="sticky-nav" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../allproducts.html">Shop All</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li>
+            <a href="../CustomProjectsGallery.html">Custom Projects Gallery</a>
+          </li>
+        </ul>
+      </nav>
+      <img
+        class="vet-owned-logo"
+        src="../images/veteran_owned_flag_logo.svg"
+        alt="Veteran-Owned business logo" />
+    </header>
+    <main>
+      <section class="hero">
+        <div class="product-hero container">
+          <div class="inner-container">
+            <div class="product-gallery">
+              <div class="main-image">
+                <img
+                  id="main-product-image"
+                  src="../images/charcuterie-board/soft-maple-text-simple-logo.jpg"
+                  alt="Soft Maple Charcuterie Board with text and small logo" />
+              </div>
+              <div class="thumbnail-gallery">
+                <img
+                  src="../images/charcuterie-board/soft-maple-text-simple-logo.jpg"
+                  alt="Soft maple charcuterie board with text and small logo"
+                  class="selected"
+                  onclick="swapImage(this)" />
+                <img
+                  src="../images/charcuterie-board/soft-maple-text-simple-logo-2.jpg"
+                  alt="Soft maple charcuterie board with text and small logo"
+                  onclick="swapImage(this)" />
+                <img
+                  src="../images/charcuterie-board/soft-maple-text-simple-logo-stained.jpg"
+                  alt="Stained soft maple charcuterie board with text and small logo"
+                  onclick="swapImage(this)" />
+                <img
+                  src="../images/charcuterie-board/ambrosia-maple-simple-text.jpg"
+                  alt="Ambrosia maple charcuterie board with text"
+                  onclick="swapImage(this)" />
+                <img
+                  src="../images/charcuterie-board/ambrosia-maple-complex-logo.jpg"
+                  alt="Ambrosia maple charcuterie board with complex logo"
+                  onclick="swapImage(this)" />
+              </div>
+            </div>
+            <div class="product-info">
+              <h1>Charcuterie Board</h1>
+              <p class="price">Price: <span id="price-display">$0.00</span></p>
+              <p class="short-description">
+                Handmade from solid oak, cedar, or walnut. Sealed, food-safe,
+                and ready to serve. Three sizes. Custom engraving available.
+              </p>
+              <form
+                action="https://tnfwoodwork.square.site/product/us-flag-challenge-coin-display/4"
+                method="GET"
+                target="_blank">
+                <div class="form-row-inline">
+                  <label for="wood-select">Choose Your Wood Type:</label>
+                  <select id="wood-select" name="wood-select">
+                    <option value="oak">Oak</option>
+                    <option value="cedar">Cedar</option>
+                    <option value="walnut">Walnut</option>
+                  </select>
+                </div>
+                <div class="form-row-inline">
+                  <label for="size-select">Choose Your Size:</label>
+                  <select id="size-select" name="size-select">
+                    <option value="small">Small (12" x 8")</option>
+                    <option value="medium">Medium (16" x 12")</option>
+                    <option value="large">Large (20" x 16")</option>
+                  </select>
+                </div>
+                <div class="form-row-inline">
+                  <label for="custom-type">Add customization?</label>
+                  <select id="custom-type" name="custom-type">
+                    <option value="none">No thanks</option>
+                    <option value="text">Yes - Text Only (+$10)</option>
+                    <option value="logo-simple">
+                      Yes - Simple Logo (+$15)
+                    </option>
+                    <option value="logo-complex">
+                      Yes - Detailed Logo / Custom Work (+$25)
+                    </option>
+                  </select>
+                </div>
+                <div id="custom-details" style="display: none">
+                  <label>
+                    Text (if selected):
+                    <input type="text" id="engraving-text" />
+                  </label>
+                  <label>
+                    Upload File (optional):
+                    <input type="file" id="engraving-file" accept=".jpg, .jpeg, .png, .svg, .ai, .eps" />
+                  </label>
+                </div>
+                <button type="submit" class="submit-button">
+                  Order Through Square
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-details container">
+        <h2>Product Details</h2>
+        <p>
+          This isn't your average cutting board - it's the centerpiece of your
+          next get-together.
+        </p>
+        <p>
+          Each charcuterie board is handcrafted from your choice of solid oak,
+          cedar, or walnut. We cut, shape, and finish them in-house for a clean,
+          food-safe surface and a solid feel that'll hold up for years. From
+          casual wine nights to full-on dinner parties, it's built to serve and
+          built to show off.
+        </p>
+        <p>
+          Available in three sizes to fit your spread. Add custom engraving for
+          a personal touch - names, dates, logos, you name it.
+        </p>
+        <ul>
+          <li>Sizes: 12" x 8", 16" x 12", 20" x 16"</li>
+          <li>Woods: Oak, Cedar, Walnut</li>
+          <li>Sealed with food-safe finish</li>
+          <li>Optional custom engraving</li>
+          <li>Handcrafted by a U.S. Army Veteran</li>
+          <li>Built in the shop, not pulled from a shelf</li>
+        </ul>
+      </section>
+
+      <details class="shipping-returns container">
+        <summary><h3>Shipping & Returns (Click to Expand)</h3></summary>
+        <div class="policy-contents">
+          <h4>Shipping</h4>
+          <p>
+            Unless a listing is clearly marked "<strong>READY TO SHIP!</strong
+            >", all TNF Wood Work items are made to order. That means I don't
+            keep stock on the shelves - each piece is crafted once you place
+            your order.
+          </p>
+          <p>
+            Most orders are built and shipped within
+            <strong>21 calendar days</strong> from the order date.
+          </p>
+          <p>
+            Highly customized builds (unique sizing, detailed engraving, special
+            materials, etc.) may take longer, and I'll always keep you updated
+            if that's the case.
+          </p>
+          <p>
+            Orders are shipped via USPS or UPS, depending on size and
+            destination. You'll receive a tracking number as soon as your order
+            hits the road.
+          </p>
+          <p>
+            If your item arrives damaged or goes missing, please reach out to
+            <a href="mailto:josh@tnfwoodwork.com">josh@tnfwoodwork.com</a>
+            within <strong>7 days</strong> of delivery. I'll work with you to
+            fix the issue.
+          </p>
+          <p>
+            I currently only accept orders within the continental United States.
+          </p>
+          <h4>Returns</h4>
+          <p>
+            Because every item is handmade - often with custom details - I can't
+            accept general returns.
+          </p>
+          <p>Here's how it works:</p>
+          <ul>
+            <li>
+              <strong>Custom Items</strong>: Final sale. If there's a problem
+              with the quality or I made a mistake, I'll make it right.
+            </li>
+            <li>
+              <strong>Non-custom Items</strong>: If it's not personalized and
+              you need to return it, contact me at
+              <a href="mailto:josh@tnfwoodwork.com">josh@tnfwoodwork.com</a>
+              within <strong>7 days</strong> of delivery. You'll need to ship it
+              back within <strong>14 days</strong> in its original condition.
+              Buyer pays shipping unless I sent the wrong item or it arrived
+              damaged.
+            </li>
+          </ul>
+        </div>
+      </details>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo-nav">
+          <a href="../index.html" class="footer-logo"
+            ><img
+              src="../images/TNF Wood Work Logo.svg"
+              alt="TNF Wood Work Logo"
+          /></a>
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../allproducts.html">Shop All</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../about.html">About</a></li>
+              <li>
+                <a href="../CustomProjectsGallery.html"
+                  >Custom Projects Gallery</a
+                >
+              </li>
+              <li><a href="../policies.html">Shop Policies</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-subscribe">
+            <h3>Subscribe to The Grainline</h3>
+            <form>
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">I'm In!</button>
+            </form>
+          </div>
+          <div class="footer-social">
+            <a
+              href="https://facebook.com/tnfwoodwork"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://tiktok.com/@tnfwoodwork"
+              target="_blank"
+              aria-label="TikTok"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+            <a
+              href="https://youtube.com/@tnfwoodwork"
+              target="_blank"
+              aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="mailto:josh@tnfwoodwork.com" aria-label="Email"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TNF Wood Work. Built to last. Veteran owned.</p>
+      </div>
+    </footer>
+  </body>
+</html>

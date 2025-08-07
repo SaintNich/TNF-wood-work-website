@@ -1,0 +1,144 @@
+:root {
+  --font-body: "Open Sans", sans-serif;
+  --font-heading: "Oswald", sans-serif;
+  --color-bg: #737373;
+  --color-text: #ffffff;
+  --color-main: #004aad;
+  --color-main-dark: #003a8c;
+  --color-gray: #888888;
+  --color-gray-light: #999999;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --space-12: 6rem;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1em;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+  header,
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sticky-nav .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .hero {
+    height: auto;
+    padding: 2rem 1rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    margin: 0;
+    align-items: center;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 2rem;
+  }
+
+  .footer-subscribe form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-subscribe input[type="email"],
+  .footer-subscribe button {
+    border-radius: 999px;
+    width: 100%;
+  }
+
+  .vet-owned-logo {
+    margin-top: 1rem;
+  }
+}
+
+/* ---------- TABLET ---------- */
+@media (max-width: 1024px) {
+  .footer-content,
+  header {
+    padding: 1rem;
+  }
+
+  .hero {
+    height: 400px;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,89 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.headerlogo img {
+  height: 100px;
+  width: auto;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--color-main);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.sticky-nav .nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sticky-nav .nav-list a {
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.sticky-nav .nav-list a:hover {
+  text-decoration: underline;
+}
+
+.vet-owned-logo {
+  height: 60px;
+  width: auto;
+}
+
+@media (max-width: 850px) {
+  .vet-owned-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-toggle {
+    display: block;
+    align-self: flex-end;
+    margin-top: -60px;
+  }
+
+  .sticky-nav {
+    display: none;
+    width: 100%;
+  }
+
+  .sticky-nav.open {
+    display: block;
+  }
+
+  .sticky-nav .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,83 @@
+.page-intro {
+  background-image: url("../images/wood-backdrop.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.page-intro h1 {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.page-intro p {
+  color: var(--color-text);
+}
+
+/* customgallery.css */
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  background-color: #5a5a5a;
+  padding: 0;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--color-text);
+  padding: var(--space-3);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.card:hover .card-caption {
+  transform: translateY(0);
+}
+
+.card-caption h2,
+.card-caption p {
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+  margin-bottom: 3rem;
+  }
+
+  .card-caption h2 {
+  line-height: 1.2;
+  }
+}
