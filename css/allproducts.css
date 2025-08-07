@@ -1,22 +1,4 @@
-/* Page-specific hero section for All Products */
-.page-intro {
-  background-image: url("../images/wood-backdrop.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 4rem 2rem;
-  border-radius: var(--radius-md);
-  color: var(--color-text);
-  text-align: center;
-}
-
-.page-intro h1 {
-  margin-bottom: 1rem;
-  color: var(--color-text);
-}
-
-.page-intro p {
-  color: var(--color-text);
-}
+/* Page-specific styles for All Products */
 
 /* Product grid layout */
 .product-grid {
@@ -142,7 +124,7 @@
   .container {
     padding: 0 1rem;
   }
-  
+
   .product-card h2 {
     font-size: 1rem;
     min-height: auto;

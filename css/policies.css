@@ -1,29 +1,3 @@
-.shop-policies-hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 300px;
-  padding: var(--space-8) var(--space-4);
-  max-width: 800px;
-  margin-inline: auto;
-}
-
-.shop-policies-hero h3 {
-  font-family: var(--font-heading);
-  font-size: 2em;
-  margin-bottom: var(--space-4);
-  color: var(--color-text);
-}
-
-.shop-policies-hero p {
-  font-family: var(--font-body);
-  font-size: 1.125em;
-  color: var(--color-text);
-  line-height: 1.6;
-}
-
 #shop-policies {
   display: flex;
   flex-direction: column;
