@@ -1,54 +1,59 @@
-/* ============================
-   POLICIES CSS - TNF WOOD WORK
-   ============================ */
-
-#policies {
-  padding: var(--spacing-lg) 0;
+.contact-us {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  background-color: var(--gray-dark);
+  border-radius: var(--radius-md);
 }
 
-.policies-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
+.contact-text {
+  flex: 1;
+  padding: var(--spacing-md);
+  padding-right: var(--spacing-sm);
+}
+
+.contact-form {
+  flex: 1;
+  padding: var(--spacing-md);
+  padding-left: var(--spacing-sm);
+  box-shadow: none;
+  align-self: flex-start;
+  color: var(--color-text);
+}
+
+.contact-form form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-sm);
 }
 
-.policies-wrapper h3 {
-  font-size: var(--font-size-xl);
-  color: var(--color-text);
-}
-
-.policies-wrapper h4 {
-  font-size: var(--font-size-lg);
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-}
-
-.policies-wrapper p,
-.policies-wrapper li {
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  background-color: var(--color-bg);
+  border: 1px solid var(--gray-medium);
+  border-radius: var(--radius-sm);
   font-size: var(--font-size-base);
-  line-height: 1.7;
   color: var(--color-text);
-  margin-bottom: 1rem;
 }
 
-.policies-wrapper ul {
-  padding-left: 1rem;
-  list-style-type: disc;
+.contact-form textarea {
+  font-family: inherit;
 }
 
-@media (max-width: 600px) {
-  .policies-wrapper h3 {
-    font-size: var(--font-size-lg);
-  }
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--gray-subtle);
+  font-family: var(--font-body);
+}
 
-  .policies-wrapper h4 {
-    font-size: var(--font-size-base);
-  }
+.contact-form p {
+  font-size: var(--font-size-xs);
+  margin-top: -0.5rem;
+}
 
-  .policies-wrapper p,
-  .policies-wrapper li {
-    font-size: var(--font-size-sm);
-  }
-} 
+.contact-form .btn {
+  align-self: flex-end;
+}

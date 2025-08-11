@@ -35,15 +35,12 @@ footer {
   display: flex;
   flex-direction: row;
   gap: var(--spacing-sm);
-  list-style: none;
   padding: 0;
   margin: 0;
   flex-wrap: wrap;
 }
 
 .footer-nav a {
-  color: var(--color-text);
-  text-decoration: none;
   font-size: var(--font-size-sm);
 }
 

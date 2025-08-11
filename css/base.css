@@ -41,7 +41,7 @@ ul {
   /* Colors */
   --color-main: #004aad;
   --color-main-dark: #003c8c;
-  --color-bg: #1a1a1a;
+  --color-bg: #737373;
   --color-text: #f2f2f2;
   --gray-dark: #5a5a5a;
   --gray-medium: #ccc;
@@ -49,6 +49,7 @@ ul {
   --gray-subtle: #ddd;
 
   /* Typography */
+  --font-size-xs: 0.75rem;
   --font-size-sm: 0.9rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.1rem;
@@ -72,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm);
   color: var(--color-text);
 }
 
@@ -85,14 +86,14 @@ h6 { font-size: 0.875rem; }
 
 p {
   font-size: var(--font-size-base);
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm);
 }
 
 /* Reusable Layout Helpers */
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 var(--spacing-sm);
 }
 
 .section {

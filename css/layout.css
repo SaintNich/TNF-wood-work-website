@@ -6,7 +6,7 @@
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: var(--spacing-md);
   padding: var(--spacing-lg) 0;
 }
 
@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
-  gap: 1rem;
+  gap: var(--spacing-sm);
 }
 
 .product-card img,
@@ -35,7 +35,7 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: var(--spacing-md);
   padding: var(--spacing-lg) 0;
 }
 
@@ -97,8 +97,8 @@
 .testimonials {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding: 0 2rem var(--spacing-lg);
+  gap: var(--spacing-md);
+  padding: 0 var(--spacing-md) var(--spacing-lg);
 }
 
 .testimonial {
@@ -113,7 +113,7 @@
 .testimonial .statement {
   font-style: italic;
   font-size: var(--font-size-lg);
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm);
   color: var(--gray-light);
 }
 
@@ -123,34 +123,40 @@
   color: var(--gray-medium);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .testimonials {
-    grid-template-columns: 1fr;
-    padding: 0 1rem var(--spacing-md);
-  }
-
-  .testimonials-heading,
-  .testimonial {
-    text-align: center;
-  }
-
-  .testimonial .statement {
-    font-size: var(--font-size-base);
-  }
-
-  .testimonial .buyer {
-    font-size: var(--font-size-xs);
-  }
+/* Custom Callout */
+.custom-callout {
+  background-color: var(--gray-dark);
+  padding: var(--spacing-lg);
+  text-align: center;
+  border-radius: var(--radius-md);
+  margin: 0 auto var(--spacing-lg);
+  width: fit-content;
+  
 }
 
-@media (max-width: 600px) {
-  .gallery-card h2 {
-    font-size: var(--font-size-lg);
-  }
+.custom-callout p {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+}
 
-  .gallery-card p {
-    font-size: var(--font-size-sm);
+.custom-callout .button {
+  background-color: var(--color-main);
+  color: var(--color-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.custom-callout .button:hover {
+  background-color: var(--color-main-dark);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 }
- 
