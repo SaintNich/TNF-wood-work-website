@@ -48,3 +48,8 @@
 .small-photo {
     max-width: 200px;
 }
+
+.large-photo:hover,
+.small-photo:hover {
+    transform: scale(1.05);
+}

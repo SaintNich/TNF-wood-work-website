@@ -22,15 +22,6 @@
   color: var(--color-text);
 }
 
-.after-paragraph-list {
-  margin-top: -1rem;
-  margin-bottom: var(--spacing-sm);
-  padding-left: var(--spacing-sm);
-  list-style-type: none;
-  color: var(--color-text);
-  position: relative;
-}
-
 .policy-text li {
   padding-left: var(--spacing-md);
   position: relative;

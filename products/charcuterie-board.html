@@ -53,101 +53,101 @@
         src="../images/veteran_owned_flag_logo.svg"
         alt="Veteran-Owned business logo" />
     </header>
+
     <main class="container">
-      <section class="hero">
-        <div class="product-hero">
-          <div class="inner-container">
-            <div class="product-gallery">
-              <div class="main-image">
-                <img
-                  id="main-product-image"
-                  src="../images/charcuterie-board/soft-maple-text-simple-logo.jpg"
-                  alt="Soft Maple Charcuterie Board with text and small logo" />
-              </div>
-              <div class="thumbnail-gallery">
-                <img
-                  src="../images/charcuterie-board/soft-maple-text-simple-logo.jpg"
-                  alt="Soft maple charcuterie board with text and small logo"
-                  class="selected"
-                  onclick="swapImage(this)" />
-                <img
-                  src="../images/charcuterie-board/soft-maple-text-simple-logo-2.jpg"
-                  alt="Soft maple charcuterie board with text and small logo"
-                  onclick="swapImage(this)" />
-                <img
-                  src="../images/charcuterie-board/soft-maple-text-simple-logo-stained.jpg"
-                  alt="Stained soft maple charcuterie board with text and small logo"
-                  onclick="swapImage(this)" />
-                <img
-                  src="../images/charcuterie-board/ambrosia-maple-simple-text.jpg"
-                  alt="Ambrosia maple charcuterie board with text"
-                  onclick="swapImage(this)" />
-                <img
-                  src="../images/charcuterie-board/ambrosia-maple-complex-logo.jpg"
-                  alt="Ambrosia maple charcuterie board with complex logo"
-                  onclick="swapImage(this)" />
-              </div>
+      <section class="section product-intro">
+        <div class="product">
+          <div class="product-gallery">
+            <div class="main-image">
+              <img
+                id="main-product-image"
+                src="../images/charcuterie-board/soft-maple-text-simple-logo.jpg"
+                alt="Soft Maple Charcuterie Board with text and small logo" />
             </div>
-            <div class="product-info">
-              <h1>Charcuterie Board</h1>
-              <p class="price">Price: <span id="price-display">$0.00</span></p>
-              <p class="short-description">
-                Handmade from solid oak, cedar, or walnut. Sealed, food-safe,
-                and ready to serve. Three sizes. Custom engraving available.
-              </p>
-              <form
-                action="https://tnfwoodwork.square.site/product/us-flag-challenge-coin-display/4"
-                method="GET"
-                target="_blank">
-                <div class="form-row-inline">
-                  <label for="wood-select">Choose Your Wood Type:</label>
-                  <select id="wood-select" name="wood-select">
-                    <option value="oak">Oak</option>
-                    <option value="cedar">Cedar</option>
-                    <option value="walnut">Walnut</option>
-                  </select>
-                </div>
-                <div class="form-row-inline">
-                  <label for="size-select">Choose Your Size:</label>
-                  <select id="size-select" name="size-select">
-                    <option value="small">Small (12" x 8")</option>
-                    <option value="medium">Medium (16" x 12")</option>
-                    <option value="large">Large (20" x 16")</option>
-                  </select>
-                </div>
-                <div class="form-row-inline">
-                  <label for="custom-type">Add customization?</label>
-                  <select id="custom-type" name="custom-type">
-                    <option value="none">No thanks</option>
-                    <option value="text">Yes - Text Only (+$10)</option>
-                    <option value="logo-simple">
-                      Yes - Simple Logo (+$15)
-                    </option>
-                    <option value="logo-complex">
-                      Yes - Detailed Logo / Custom Work (+$25)
-                    </option>
-                  </select>
-                </div>
-                <div id="custom-details" style="display: none">
-                  <label>
-                    Text (if selected):
-                    <input type="text" id="engraving-text" />
-                  </label>
-                  <label>
-                    Upload File (optional):
-                    <input type="file" id="engraving-file" accept=".jpg, .jpeg, .png, .svg, .ai, .eps" />
-                  </label>
-                </div>
-                <button type="submit" class="submit-button">
-                  Order Through Square
-                </button>
-              </form>
+            <div class="thumbnail-gallery">
+              <img
+                src="../images/charcuterie-board/soft-maple-text-simple-logo.jpg"
+                alt="Soft maple charcuterie board with text and small logo"
+                class="selected"
+                onclick="swapImage(this)" />
+              <img
+                src="../images/charcuterie-board/soft-maple-text-simple-logo-2.jpg"
+                alt="Soft maple charcuterie board with text and small logo"
+                onclick="swapImage(this)" />
+              <img
+                src="../images/charcuterie-board/soft-maple-text-simple-logo-stained.jpg"
+                alt="Stained soft maple charcuterie board with text and small logo"
+                onclick="swapImage(this)" />
+              <img
+                src="../images/charcuterie-board/ambrosia-maple-simple-text.jpg"
+                alt="Ambrosia maple charcuterie board with text"
+                onclick="swapImage(this)" />
+              <img
+                src="../images/charcuterie-board/ambrosia-maple-complex-logo.jpg"
+                alt="Ambrosia maple charcuterie board with complex logo"
+                onclick="swapImage(this)" />
             </div>
+          </div>
+
+          <div class="product-info">
+            <h1>Charcuterie Board</h1>
+            <p class="price">Price: <span id="price-display">$0.00</span></p>
+            <p class="short-description">
+              Handmade from solid oak, cedar, or walnut. Sealed, food-safe, and
+              ready to serve. Three sizes. Custom engraving available.
+            </p>
+
+            <form
+              action="https://tnfwoodwork.square.site/product/us-flag-challenge-coin-display/4"
+              method="GET"
+              target="_blank">
+              <div class="form-row-inline">
+                <label for="wood-select">Choose Your Wood Type:</label>
+                <select id="wood-select" name="wood-select">
+                  <option value="oak">Oak</option>
+                  <option value="cedar">Cedar</option>
+                  <option value="walnut">Walnut</option>
+                </select>
+              </div>
+
+              <div class="form-row-inline">
+                <label for="size-select">Choose Your Size:</label>
+                <select id="size-select" name="size-select">
+                  <option value="small">Small (12&quot; x 8&quot;)</option>
+                  <option value="medium">Medium (16&quot; x 12&quot;)</option>
+                  <option value="large">Large (20&quot; x 16&quot;)</option>
+                </select>
+              </div>
+
+              <div class="form-row-inline">
+                <label for="custom-type">Add customization?</label>
+                <select id="custom-type" name="custom-type">
+                  <option value="none">No thanks</option>
+                  <option value="text">Yes - Text Only (+$10)</option>
+                  <option value="logo-simple">Yes - Simple Logo (+$15)</option>
+                  <option value="logo-complex">
+                    Yes - Detailed Logo / Custom Work (+$25)
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-row-inline" id="custom-details" style="display: none">
+                <label for="engraving-text">Text (if selected):</label> 
+                  <input type="text" id="engraving-text" />
+                <label for="engraving-file">Upload File (optional):</label>
+                <input
+                  type="file"
+                  id="engraving-file"
+                  accept=".jpg, .jpeg, .png, .svg, .ai, .eps" />
+              </div>
+
+              <button type="submit" class="btn">Order Through Square</button>
+            </form>
           </div>
         </div>
       </section>
 
-      <section class="product-details">
+      <section class="section product-details">
         <h2>Product Details</h2>
         <p>
           This isn't your average cutting board - it's the centerpiece of your
@@ -164,7 +164,7 @@
           Available in three sizes to fit your spread. Add custom engraving for
           a personal touch - names, dates, logos, you name it.
         </p>
-        <ul>
+        <ul class="after-paragraph-list">
           <li>Sizes: 12" x 8", 16" x 12", 20" x 16"</li>
           <li>Woods: Oak, Cedar, Walnut</li>
           <li>Sealed with food-safe finish</li>
@@ -174,10 +174,10 @@
         </ul>
       </section>
 
-      <details class="shipping-returns">
-        <summary><h3>Shipping & Returns (Click to Expand)</h3></summary>
+      <details class="section shipping-returns">
+        <summary><h2>Shipping & Returns <sup>(Click to Expand)</sup></h2></summary>
         <div class="policy-contents">
-          <h4>Shipping</h4>
+          <h3>Shipping</h3>
           <p>
             Unless a listing is clearly marked "<strong>READY TO SHIP!</strong
             >", all TNF Wood Work items are made to order. That means I don't
@@ -207,13 +207,13 @@
           <p>
             I currently only accept orders within the continental United States.
           </p>
-          <h4>Returns</h4>
+          <h3>Returns</h3>
           <p>
             Because every item is handmade - often with custom details - I can't
             accept general returns.
           </p>
           <p>Here's how it works:</p>
-          <ul>
+          <ul class="after-paragraph-list">
             <li>
               <strong>Custom Items</strong>: Final sale. If there's a problem
               with the quality or I made a mistake, I'll make it right.

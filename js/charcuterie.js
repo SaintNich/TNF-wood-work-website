@@ -18,7 +18,7 @@ const customType = document.getElementById("custom-type");
 const customDetails = document.getElementById("custom-details");
 
 customType.addEventListener("change", () => {
-  customDetails.style.display = customType.value === "none" ? "none" : "block";
+  customDetails.style.display = customType.value === "none" ? "none" : "flex";
 });
 
 function updatePrice() {

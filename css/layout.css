@@ -3,7 +3,8 @@
    ============================ */
 
 /* Product Grid Layout */
-.product-grid {
+.product-grid,
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-md);
@@ -30,13 +31,6 @@
   width: 100%;
   height: auto;
   border-radius: var(--radius-sm);
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-md);
-  padding: var(--spacing-lg) 0;
 }
 
 .gallery-card h2 {
@@ -121,6 +115,15 @@
   font-weight: bold;
   font-size: var(--font-size-sm);
   color: var(--gray-medium);
+}
+
+.after-paragraph-list {
+  margin-top: -1rem;
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+  list-style-type: none;
+  color: var(--color-text);
+  position: relative;
 }
 
 /* Custom Callout */

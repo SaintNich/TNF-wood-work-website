@@ -9,27 +9,24 @@
     </title>
     <meta
       name="description"
-      content="Handmade triangular wooden book holder built from cedar, oak, or walnut. Clean lines. No screws. Veteran-crafted by TNF Wood Work in Chapin, SC."
-    />
+      content="Handmade triangular wooden book holder built from cedar, oak, or walnut. Clean lines. No screws. Veteran-crafted by TNF Wood Work in Chapin, SC." />
     <link
       rel="icon"
       type="image/png"
-      href="../images/TNF Wood Work Logo (Favicon).png"
-    />
+      href="../images/TNF Wood Work Logo (Favicon).png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;800&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/product.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <script defer src="../js/main.js"></script>
+    <script defer src="../js/book-holder.js"></script>
   </head>
   <body>
     <header>
@@ -38,7 +35,10 @@
           ><img src="../images/TNF Wood Work Logo.svg" alt="TNF Wood Work logo"
         /></a>
       </div>
-      <nav class="sticky-nav">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="sticky-nav" id="navMenu">
         <ul class="nav-list">
           <li><a href="../index.html">Home</a></li>
           <li><a href="../allproducts.html">Shop All</a></li>
@@ -52,98 +52,85 @@
       <img
         class="vet-owned-logo"
         src="../images/veteran_owned_flag_logo.svg"
-        alt="Veteran-Owned business logo"
-      />
+        alt="Veteran-Owned business logo" />
     </header>
+
     <main class="container">
-      <section class="hero">
-        <div class="product-hero">
-          <div class="inner-container">
+      <section class="section product-intro">
+        <div class="product">
             <div class="product-gallery">
               <div class="main-image">
                 <img
                   id="main-product-image"
                   src="../images/triangular-book-holder/cedar-book-holder.jpg"
-                  alt="Cedar book holder with book and glasses"
-                />
+                  alt="Cedar book holder with book and glasses" />
               </div>
               <div class="thumbnail-gallery">
                 <img
                   src="../images/triangular-book-holder/cedar-book-holder.jpg"
                   alt="Cedar book holder with book and glasses"
                   class="selected"
-                  onclick="swapImage(this)"
-                />
+                  onclick="swapImage(this)" />
                 <img
                   src="../images/triangular-book-holder/cedar-book-holder-2.jpg"
                   alt="Cedar book holder"
-                  onclick="swapImage(this)"
-                />
+                  onclick="swapImage(this)" />
                 <img
                   src="../images/triangular-book-holder/maple-book-holder.jpg"
                   alt="Maple book holder"
-                  onclick="swapImage(this)"
-                />
+                  onclick="swapImage(this)" />
                 <img
                   src="../images/triangular-book-holder/walnut-book-holder.jpg"
                   alt="Walnut book holder"
-                  onclick="swapImage(this)"
-                />
+                  onclick="swapImage(this)" />
               </div>
             </div>
+
             <div class="product-info">
               <h1>Triangular Wooden Book Holder</h1>
-              <p class="price">Starting at $49.99</p>
+              <p class="price">Price: <span id="price-display">$0.00</span></p>
               <p class="short-description">
                 Handmade triangular wooden book holder built from cedar, oak, or
                 walnut. Clean lines. No screws. Veteran-crafted by TNF Wood Work
                 in Chapin, SC.
               </p>
+
               <form
                 action="https://tnfwoodwork.square.site/product/wall-mounted-challenge-coin-rack-custom-veteran-craftsmanship/2?cs=true&cst=custom"
                 method="GET"
-                target="_blank"
-              >
-                <fieldset>
-                  <legend>Wood Type:</legend>
-                  <label
-                    ><input type="radio" name="wood" value="cedar" />Cedar -
-                    $49.99</label
-                  >
-                  <label
-                    ><input type="radio" name="wood" value="oak" />Oak -
-                    $49.99</label
-                  >
-                  <label
-                    ><input type="radio" name="wood" value="walnut" />Walnut -
-                    $59.99</label
-                  >
-                </fieldset>
-                <button type="submit" class="submit-button">
-                  Order Through Square
-                </button>
+                target="_blank">
+                <div class="form-row-inline">
+                  <label for="wood-select">Choose Your Wood Type:</label>
+                  <select id="wood-select" name="wood-select">
+                    <option value="oak">Oak</option>
+                    <option value="cedar">Cedar</option>
+                    <option value="walnut">Walnut</option>
+                  </select>
+                </div>
+                
+                <button type="submit" class="btn">Order Through Square</button>
               </form>
-            </div>
           </div>
         </div>
       </section>
-      <section class="product-details">
+      <section class="section product-details">
         <h2>Product Details</h2>
         <p>For the book lover who also loves a good design.</p>
         <p>
           This triangular book holder gives your current read a proper resting
           place. Clean lines. Natural wood. Just simple, functional woodworking.
         </p>
-        <ul>
+        <ul class="after-paragraph-list">
           <li>Built from cedar, oak, or walnut; finished smooth</li>
           <li>Designed and made in-house</li>
           <li>Veteran-built, no discount pricing</li>
         </ul>
       </section>
-      <details class="shipping-returns">
-        <summary><h3>Shipping & Returns (Click to Expand)</h3></summary>
+      
+      <details class="section shipping-returns">
+        <summary><h2>Shipping & Returns <sup>(Click to Expand)</sup></h2></summary>
         <div class="policy-contents">
-          <h4>Shipping</h4>
+          <h3>Shipping</h3>
           <p>
             Unless a listing is clearly marked "<strong>READY TO SHIP!</strong
             >", all TNF Wood Work items are made to order. That means I don't
@@ -173,13 +160,13 @@
           <p>
             I currently only accept orders within the continental United States.
           </p>
-          <h4>Returns</h4>
+          <h3>Returns</h3>
           <p>
             Because every item is handmade - often with custom details - I can't
             accept general returns.
           </p>
           <p>Here's how it works:</p>
-          <ul>
+          <ul class="after-paragraph-list">
             <li>
               <strong>Custom Items</strong>: Final sale. If there's a problem
               with the quality or I made a mistake, I'll make it right.
@@ -197,6 +184,7 @@
         </div>
       </details>
     </main>
+
     <footer>
       <div class="footer-content">
         <div class="footer-logo-nav">
