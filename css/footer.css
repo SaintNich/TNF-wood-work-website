@@ -1,7 +1,3 @@
-/* ============================
-   FOOTER CSS - TNF WOOD WORK
-   ============================ */
-
 footer {
   background-color: var(--gray-dark);
   color: var(--color-text);
@@ -109,6 +105,7 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Split footer nav into two columns and prevent wrapping */
 @media (max-width: 1190px) and (min-width: 711px) {
   .footer-nav ul {
     flex-wrap: wrap;
@@ -128,6 +125,7 @@ footer {
   }
 }
 
+/* Move footer nav to a single column and modify subscription area */
 @media (max-width: 710px) {
   .footer-content {
     flex-direction: column;

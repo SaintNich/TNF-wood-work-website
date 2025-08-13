@@ -8,21 +8,17 @@
     </title>
     <meta
       name="description"
-      content="Showcase your story in stripes and stars. This handcrafted US flag challenge coin holder is built to honor your service—crafted by a veteran, for veterans."
-    />
+      content="Showcase your story in stripes and stars. This handcrafted US flag challenge coin holder is built to honor your service—crafted by a veteran, for veterans."/>
     <link
       rel="icon"
       type="image/png"
-      href="../images/TNF Wood Work Logo (Favicon).png"
-    />
+      href="../images/TNF Wood Work Logo (Favicon).png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;800&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/header.css" />
@@ -37,7 +33,10 @@
           ><img src="../images/TNF Wood Work Logo.svg" alt="TNF Wood Work logo"
         /></a>
       </div>
-      <nav class="sticky-nav">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="sticky-nav" id="navMenu">
         <ul class="nav-list">
           <li><a href="../index.html">Home</a></li>
           <li><a href="../allproducts.html">Shop All</a></li>
@@ -51,84 +50,76 @@
       <img
         class="vet-owned-logo"
         src="../images/veteran_owned_flag_logo.svg"
-        alt="Veteran-Owned business logo"
-      />
+        alt="Veteran-Owned business logo" />
     </header>
+
     <main class="container">
-      <section class="hero">
-        <div class="product-hero">
-          <div class="inner-container">
-            <div class="product-gallery">
-              <div class="main-image">
-                <img
-                  id="main-product-image"
-                  src="../images/us-flag-challenge-coin-display/US Flag Challenge Coin Display.jpg"
-                  alt="US Flag Challenge Coin Display"
-                />
-              </div>
-              <div class="thumbnail-gallery">
-                <img
-                  src="../images/us-flag-challenge-coin-display/US Flag Challenge Coin Display.jpg"
-                  alt="US Flag Challenge Coin Display, US Army Field"
-                  class="selected"
-                  onclick="swapImage(this)"
-                />
-                <img
-                  src="../images/us-flag-challenge-coin-display/Flag Challenge Coin Holder with US Army Field.jpg"
-                  alt="US Flag Challenge Coin Display, with Coins"
-                  onclick="swapImage(this)"
-                />
-                <img
-                  src="../images/us-flag-challenge-coin-display/Flag Challenge Coin Holder with US Army Field (2).JPEG"
-                  alt="US Flag Challenge Coin Display, from side angle"
-                  onclick="swapImage(this)"
-                />
-              </div>
+      <section class="section product-intro">
+        <div class="product">
+          <div class="product-gallery">
+            <div class="main-image">
+              <img
+                id="main-product-image"
+                src="../images/us-flag-challenge-coin-display/US Flag Challenge Coin Display.jpg"
+                alt="US Flag Challenge Coin Display" />
             </div>
-            <div class="product-info">
-              <h1>US Flag Challenge Coin Display</h1>
-              <p class="price">$149.99</p>
-              <p class="short-description">
-                Showcase your story in stripes and stars. Built for wall display
-                with clean lines and deep pride.
-              </p>
-              <form
-                action="https://tnfwoodwork.square.site/product/us-flag-challenge-coin-display/4"
-                method="GET"
-                target="_blank"
-              >
-                <div class="form-row-inline">
-                  <label for="flag-style">Choose Your Flag Style:</label>
-                  <select id="flag-style" name="flag-style">
-                    <option value="50-stars">50 Stars</option>
-                    <option value="betsy-ross">
-                      Betsy Ross (13 Stars - Circular)
-                    </option>
-                    <option value="us-army">US Army</option>
-                    <option value="us-navy">US Navy</option>
-                    <option value="us-marines">US Marine Corps</option>
-                    <option value="us-air-force">US Air Force</option>
-                    <option value="thin-blue-line">Thin Blue Line</option>
-                    <option value="thin-red-line">Thin Red Line</option>
-                  </select>
-                </div>
-                <button type="submit" class="submit-button">
-                  Order Through Square
-                </button>
-              </form>
+            <div class="thumbnail-gallery">
+              <img
+                src="../images/us-flag-challenge-coin-display/US Flag Challenge Coin Display.jpg"
+                alt="US Flag Challenge Coin Display, US Army Field"
+                class="selected"
+                onclick="swapImage(this)" />
+              <img
+                src="../images/us-flag-challenge-coin-display/Flag Challenge Coin Holder with US Army Field.jpg"
+                alt="US Flag Challenge Coin Display, with Coins"
+                onclick="swapImage(this)" />
+              <img
+                src="../images/us-flag-challenge-coin-display/Flag Challenge Coin Holder with US Army Field (2).JPEG"
+                alt="US Flag Challenge Coin Display, from side angle"
+                onclick="swapImage(this)" />
             </div>
+          </div>
+          <div class="product-info">
+            <h1>US Flag Challenge Coin Display</h1>
+            <p class="price">Price: $149.99</p>
+            <p class="short-description">
+              Showcase your story in stripes and stars. Built for wall display
+              with clean lines and deep pride.
+            </p>
+
+            <form
+              action="https://tnfwoodwork.square.site/product/us-flag-challenge-coin-display/4"
+              method="GET"
+              target="_blank">
+              <div class="form-row-inline">
+                <label for="flag-style">Choose Your Flag Style:</label>
+                <select id="flag-style" name="flag-style">
+                  <option value="50-stars">50 Stars</option>
+                  <option value="betsy-ross">
+                    Betsy Ross (13 Stars - Circular)
+                  </option>
+                  <option value="us-army">US Army</option>
+                  <option value="us-navy">US Navy</option>
+                  <option value="us-marines">US Marine Corps</option>
+                  <option value="us-air-force">US Air Force</option>
+                  <option value="thin-blue-line">Thin Blue Line</option>
+                  <option value="thin-red-line">Thin Red Line</option>
+                </select>
+              </div>
+              <button type="submit" class="btn">Order Through Square</button>
+            </form>
           </div>
         </div>
       </section>
 
-      <section class="product-details">
+      <section class="section product-details">
         <h2>Product Details</h2>
         <p>
           This US flag challenge coin holder features a clean layout with plenty
           of shelf space for your collection. Designed to hang on the wall and
           built to reflect the pride behind every coin.
         </p>
-        <ul>
+        <ul class="after-paragraph-list">
           <li>
             Choose your layout: 50 Stars, Betsy Ross, Army, Navy, Marines, Air
             Force, Thin Blue Line, Thin Red Line
@@ -139,10 +130,10 @@
         </ul>
       </section>
 
-      <details class="shipping-returns">
-        <summary><h3>Shipping & Returns (Click to Expand)</h3></summary>
+      <details class="section shipping-returns">
+        <summary><h2>Shipping & Returns <sup>(Click to Expand)</sup></h2></summary>
         <div class="policy-contents">
-          <h4>Shipping</h4>
+          <h3>Shipping</h3>
           <p>
             Unless a listing is clearly marked "<strong>READY TO SHIP!</strong
             >", all TNF Wood Work items are made to order. That means I don't
@@ -172,13 +163,13 @@
           <p>
             I currently only accept orders within the continental United States.
           </p>
-          <h4>Returns</h4>
+          <h3>Returns</h3>
           <p>
             Because every item is handmade - often with custom details - I can't
             accept general returns.
           </p>
           <p>Here's how it works:</p>
-          <ul>
+          <ul class="after-paragraph-list">
             <li>
               <strong>Custom Items</strong>: Final sale. If there's a problem
               with the quality or I made a mistake, I'll make it right.

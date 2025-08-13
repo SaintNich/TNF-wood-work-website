@@ -53,3 +53,32 @@
 .small-photo:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+    .hot-products-gallery h3 {
+        min-height: 3.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .hot-products-gallery {
+        flex-direction: column;
+        gap: 0;
+        padding-bottom: 0;
+    }
+
+    .small-photos-col {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .large-photo,
+    .small-photo {
+        max-width: 350px;
+        margin: 0 auto var(--spacing-md);
+    }
+
+    .hot-products-gallery h3 {
+        min-height: var(--spacing-md);
+    }
+}

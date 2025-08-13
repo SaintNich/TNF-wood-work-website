@@ -34,7 +34,10 @@
           ><img src="../images/TNF Wood Work Logo.svg" alt="TNF Wood Work logo"
         /></a>
       </div>
-      <nav class="sticky-nav">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="sticky-nav" id="navMenu">
         <ul class="nav-list">
           <li><a href="../index.html">Home</a></li>
           <li><a href="../allproducts.html">Shop All</a></li>
@@ -50,106 +53,107 @@
         src="../images/veteran_owned_flag_logo.svg"
         alt="Veteran-Owned business logo" />
     </header>
+
     <main class="container">
-      <section class="hero">
-        <div class="product-hero">
-          <div class="inner-container">
-            <div class="product-gallery">
-              <div class="main-image">
-                <img
-                  id="main-product-image"
-                  src="../images/entry-sign/go-away.jpg"
-                  alt="Entry sign made of osage orange and black lettering" />
+      <section class="section product-intro">
+        <div class="product">
+          <div class="product-gallery">
+            <div class="main-image">
+              <img
+                id="main-product-image"
+                src="../images/entry-sign/go-away.jpg"
+                alt="Entry sign made of osage orange and black lettering" />
+            </div>
+            <div class="thumbnail-gallery">
+              <img
+                src="../images/entry-sign/go-away.jpg"
+                alt="Entry sign made of osage orange and black lettering"
+                class="selected"
+                onclick="swapImage(this)" />
+              <img
+                src="../images/entry-sign/welcome.jpg"
+                alt="Entry sign made of cedar with a live-edge and black lettering"
+                onclick="swapImage(this)" />
+              <img
+                src="../images/entry-sign/welcome-ish.jpg"
+                alt="Entry sign made of walnut and white lettering"
+                onclick="swapImage(this)" />
+            </div>
+          </div>
+          <div class="product-info">
+            <h1>Custom Wooden Entry Sign</h1>
+            <p class="price">Price: <span id="price-display">$0.00</span></p>
+            <p class="short-description">
+              Built to Welcome. Made to Last.
+            </p>
+            <form
+              action="https://tnfwoodwork.square.site/product/us-flag-challenge-coin-display/4"
+              method="GET"
+              target="_blank">
+              <div class="form-row-inline">
+                <label for="wood-select">Choose Your Wood Type:</label>
+                <select id="wood-select" name="wood-select">
+                  <option value="oak">Oak</option>
+                  <option value="cedar">Cedar</option>
+                  <option value="walnut">Walnut</option>
+                </select>
               </div>
-              <div class="thumbnail-gallery">
-                <img
-                  src="../images/entry-sign/go-away.jpg"
-                  alt="Entry sign made of osage orange and black lettering"
-                  class="selected"
-                  onclick="swapImage(this)" />
-                <img
-                  src="../images/entry-sign/welcome.jpg"
-                  alt="Entry sign made of cedar with a live-edge and black lettering"
-                  onclick="swapImage(this)" />
-                <img
-                  src="../images/entry-sign/welcome-ish.jpg"
-                  alt="Entry sign made of walnut and white lettering"
-                  onclick="swapImage(this)" />
-                </div>
-            </div>
-            <div class="product-info">
-              <h1>Custom Wooden Entry Sign</h1>
-              <p class="price">Price: <span id="price-display">$0.00</span></p>
-              <p class="short-description">
-                Built to Welcome. Made to Last.
-              </p>
-              <form
-                action="https://tnfwoodwork.square.site/product/us-flag-challenge-coin-display/4"
-                method="GET"
-                target="_blank">
-                <div class="form-row-inline">
-                  <label for="wood-select">Choose Your Wood Type:</label>
-                  <select id="wood-select" name="wood-select">
-                    <option value="oak">Oak</option>
-                    <option value="cedar">Cedar</option>
-                    <option value="walnut">Walnut</option>
-                  </select>
-                </div>
-                <div class="form-row-inline">
-                  <label for="size-select">Choose Your Size:</label>
-                  <select id="size-select" name="size-select">
-                    <option value="small">Small (24" Tall x 6" Wide)</option>
-                    <option value="medium">Medium (36" Tall x 6-8" Wide)</option>
-                    <option value="large">Large (48" Tall x 8-10" Wide)</option>
-                  </select>
-                </div>
-                <div class="form-row-inline">
-                  <label for="phrase-select">Choose Your Saying:</label>
-                  <select id="phrase-select" name="phrase-select">
-                    <option value="welcome">Welcome</option>
-                    <option value="go-away">Go Away</option>
-                    <option value="welcomeish">Welcome ...ish Depends on Who You Are and How Long You're Staying</option>
-                    <option value="custom">Use the "Add customization?" option below</option>
-                  </select>
-                </div>
-                <div class="form-row-inline">
-                  <label for="custom-type">Add customization?</label>
-                  <select id="custom-type" name="custom-type">
-                    <option value="none">No thanks</option>
-                    <option value="text">Yes - Text Only</option>
-                    <option value="logo-simple">
-                      Yes - Simple Logo with Text (+$10)
-                    </option>
-                    <option value="logo-complex">
-                      Yes - Detailed Logo / Custom Work with Text (+$25)
-                    </option>
-                  </select>
-                </div>
-                <div id="custom-details" style="display: none">
-                  <label>
-                    Text (if selected):
-                    <input type="text" id="engraving-text" />
-                  </label>
-                  <label>
-                    Upload File (optional):
-                    <input type="file" id="engraving-file" accept=".jpg, .jpeg, .png, .svg, .ai, .eps" />
-                  </label>
-                </div>
-                <button type="submit" class="submit-button">
-                  Order Through Square
-                </button>
-              </form>
-            </div>
+
+              <div class="form-row-inline">
+                <label for="size-select">Choose Your Size:</label>
+                <select id="size-select" name="size-select">
+                  <option value="small">Small (24" Tall x 6" Wide)</option>
+                  <option value="medium">Medium (36" Tall x 6-8" Wide)</option>
+                  <option value="large">Large (48" Tall x 8-10" Wide)</option>
+                </select>
+              </div>
+
+              <div class="form-row-inline">
+                <label for="phrase-select">Choose Your Saying:</label>
+                <select id="phrase-select" name="phrase-select">
+                  <option value="welcome">Welcome</option>
+                  <option value="go-away">Go Away</option>
+                  <option value="welcomeish">Welcome ...ish Depends on Who You Are and How Long You're Staying</option>
+                  <option value="custom">Use the "Add customization?" option below</option>
+                </select>
+              </div>
+
+              <div class="form-row-inline">
+                <label for="custom-type">Add customization?</label>
+                <select id="custom-type" name="custom-type">
+                  <option value="none">No thanks</option>
+                  <option value="text">Yes - Text Only</option>
+                  <option value="logo-simple">
+                    Yes - Simple Logo with Text (+$10)
+                  </option>
+                  <option value="logo-complex">
+                    Yes - Detailed Logo / Custom Work with Text (+$25)
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-row-inline" id="custom-details" style="display: none">
+                <label for="engraving-text">Text (if selected):</label> 
+                  <input type="text" id="engraving-text" />
+                <label for="engraving-file">Upload File (optional):</label>
+                <input
+                  type="file"
+                  id="engraving-file"
+                  accept=".jpg, .jpeg, .png, .svg, .ai, .eps" />
+              </div>
+
+              <button type="submit" class="btn">Order Through Square</button>
+            </form>
           </div>
         </div>
       </section>
 
-      <section class="product-details">
+      <section class="section product-details">
         <h2>Product Details</h2>
         <p>
           This ain't some off-the-shelf welcome sign. Every piece is handcrafted right here in Chapin, SC, using solid oak, cedar, or walnut - your choice. Whether you're greeting folks at the front door or dressing up your porch, this does the job with grit and good looks.
         </p>
-        <ul>
+        <ul class="after-paragraph-list">
           <li>Size: 24" tall, 36" tall, or 48" tall</li>
           <li>Wood Options: Oak (classic), Cedar (rustic), or Walnut (bold)</li>
           <li>Engraving: Choose from three standard sayings or add your own custom text/logo</li>
@@ -159,10 +163,10 @@
         </p>
       </section>
 
-      <details class="shipping-returns">
-        <summary><h3>Shipping & Returns (Click to Expand)</h3></summary>
+      <details class="section shipping-returns">
+        <summary><h2>Shipping & Returns <sup>(Click to Expand)</sup></h2></summary>
         <div class="policy-contents">
-          <h4>Shipping</h4>
+          <h3>Shipping</h3>
           <p>
             Unless a listing is clearly marked "<strong>READY TO SHIP!</strong
             >", all TNF Wood Work items are made to order. That means I don't
@@ -192,13 +196,13 @@
           <p>
             I currently only accept orders within the continental United States.
           </p>
-          <h4>Returns</h4>
+          <h3>Returns</h3>
           <p>
             Because every item is handmade - often with custom details - I can't
             accept general returns.
           </p>
           <p>Here's how it works:</p>
-          <ul>
+          <ul class="after-paragraph-list">
             <li>
               <strong>Custom Items</strong>: Final sale. If there's a problem
               with the quality or I made a mistake, I'll make it right.

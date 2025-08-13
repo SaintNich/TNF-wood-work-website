@@ -102,7 +102,7 @@ label {
 
 .form-row-inline select,
 #custom-details input[type="text"] {
-  min-width: 290px;
+  min-width: 300px;
   max-width: 300px;
   background: var(--color-bg);
   color: var(--color-text);
@@ -175,4 +175,22 @@ form .btn {
     border-radius: var(--radius-md);
     padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
     margin-top: var(--spacing-md);
+}
+
+@media (max-width: 1024px) {
+  .thumbnail-gallery img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-info {
+    width: 450px;
+  }
+
+  .thumbnail-gallery img {
+    height: 40px;
+    width: 40px;
+  }
 }
