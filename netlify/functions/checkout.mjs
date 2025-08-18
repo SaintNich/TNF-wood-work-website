@@ -1,13 +1,8 @@
 import crypto from 'crypto';
-// Depending on the SDK version you install, the import is either 'square' or '@square/square'
-import { Client, Environment } from 'square';
+import * as Square from 'square'; // supports both enum + string env
+const { Client } = Square;
 
-const client = new Client({
-  environment: process.env.SQUARE_ENV === 'PRODUCTION' ? Environment.Production : Environment.Sandbox,
-  accessToken: process.env.SQUARE_ACCESS_TOKEN
-});
-
-// Basic product/price table (server is the source of truth)
+// ---- price table ----
 const PRODUCTS = {
   'charcuterie-board': { base: 59.99 },
   'drill-sergeant-hat-display': { base: 109.99 },
@@ -21,44 +16,62 @@ function computePriceCents(productId, options = {}) {
   const p = PRODUCTS[productId];
   if (!p) throw new Error('Unknown product');
   let price = p.base;
-
-  // Add your option math here (examples):
-  // size
   if (options.size === '16x12') price += 20;
   if (options.size === '20x16') price += 50;
-  // wood
   if (options.wood === 'walnut') price += 25;
-  // engraving
   if (options.engraving && options.engraving !== 'none') price += 10;
-
-  return Math.round(price * 100); // cents
+  return Math.round(price * 100);
 }
 
 export async function handler(event) {
   try {
-    if (event.httpMethod !== 'POST') return { statusCode: 405, body: 'Method Not Allowed' };
+    if (event.httpMethod !== 'POST') {
+      return { statusCode: 405, body: 'Method Not Allowed' };
+    }
+
+    // ---- env sanity ----
+    const required = ['SQUARE_ACCESS_TOKEN','SQUARE_LOCATION_ID','SQUARE_ENV'];
+    const missing = required.filter(k => !process.env[k]);
+    if (missing.length) {
+      return { statusCode: 500, body: JSON.stringify({ ok:false, error:`Missing env vars: ${missing.join(', ')}` }) };
+    }
+
+    // Use enum if available, else string fallback (prevents “reading 'Sandbox'”)
+    const envSetting = (process.env.SQUARE_ENV || 'SANDBOX').toUpperCase();
+    const EnvEnum = Square.Environment; // may be undefined in some builds
+    const environment =
+      EnvEnum
+        ? (envSetting === 'PRODUCTION' ? EnvEnum.Production : EnvEnum.Sandbox)
+        : (envSetting === 'PRODUCTION' ? 'production' : 'sandbox');
+
+    // ---- create client INSIDE handler ----
+    const client = new Client({
+      environment,
+      accessToken: process.env.SQUARE_ACCESS_TOKEN
+    });
+
     const { sourceId, productId, options, amount, buyerEmail } = JSON.parse(event.body || '{}');
 
-    // Compute authoritative price server-side
+    // ---- price check ----
     const expected = computePriceCents(productId, options);
     const clientAmt = Math.round(Number(amount || 0) * 100);
     if (clientAmt !== expected) {
-      return { statusCode: 400, body: JSON.stringify({ ok: false, error: 'Price mismatch. Refresh and try again.' }) };
+      return { statusCode: 400, body: JSON.stringify({ ok:false, error:`Price mismatch: client ${clientAmt} vs server ${expected}` }) };
     }
 
-    // Optional: create an Order for nicer receipts
+    // ---- optional order ----
     const { result: orderRes } = await client.ordersApi.createOrder({
       order: {
         locationId: process.env.SQUARE_LOCATION_ID,
         lineItems: [{
-          name: productId.replace(/-/g, ' '),
+          name: productId.replace(/-/g,' '),
           quantity: '1',
           basePriceMoney: { amount: expected, currency: 'USD' }
         }]
       }
     });
 
-    // Charge
+    // ---- charge ----
     const { result: payRes } = await client.paymentsApi.createPayment({
       idempotencyKey: crypto.randomUUID(),
       sourceId,
@@ -69,12 +82,13 @@ export async function handler(event) {
       buyerEmailAddress: buyerEmail || undefined
     });
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ ok: true, paymentId: payRes.payment.id, orderId: orderRes.order?.id })
-    };
+    return { statusCode: 200, body: JSON.stringify({ ok:true, paymentId: payRes.payment.id, orderId: orderRes.order?.id }) };
   } catch (err) {
-    console.error(err);
-    return { statusCode: 500, body: JSON.stringify({ ok: false, error: 'Server error' }) };
+    console.error('Checkout error:', err);
+    const detail =
+      err?.result?.errors?.[0]?.detail ||
+      err?.errors?.[0]?.detail ||
+      err?.message || 'Server error';
+    return { statusCode: 500, body: JSON.stringify({ ok:false, error: detail }) };
   }
 }
