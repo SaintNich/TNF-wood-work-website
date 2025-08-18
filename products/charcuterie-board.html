@@ -51,6 +51,9 @@
         "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "59.99" }
       }
     </script>
+    <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+    <meta name="square-app-id" content="sandbox-sq0idb-RpHq5nEoIp_4myEsyfENyQ">
+    <meta name="square-location-id" content="LXN18H6SAZEPM">
   </head>
 
   <body>
@@ -117,10 +120,7 @@
               Solid hardwood board (oak, cedar, or walnut) with a food-safe finish. Three sizes. Optional engraving.
             </p>
 
-            <form
-              action="https://tnfwoodwork.square.site/product/us-flag-challenge-coin-display/4"
-              method="GET"
-              target="_blank">
+            <form>
               <div class="form-row-inline">
                 <label for="wood-select">Choose Your Wood Type:</label>
                 <select id="wood-select" name="wood-select">
@@ -156,7 +156,11 @@
                 <input type="file" id="engraving-file" accept=".jpg, .jpeg, .png, .svg, .ai, .eps" />
               </div>
 
-              <button type="submit" class="btn">Order Through Square</button>
+              <div id="card-container"></div>
+              <button id="buyBtn" class="btn">Buy Now</button>
+              <label class="sr-only" for="buyer-email">Email (for receipt)</label>
+              <input id="buyer-email" type="email" placeholder="Email for receipt (optional)">
+
             </form>
           </div>
         </div>
