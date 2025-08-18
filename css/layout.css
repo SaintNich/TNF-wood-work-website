@@ -6,9 +6,12 @@
 .product-grid,
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--spacing-md);
   padding: var(--spacing-lg) 0;
+  align-items: start;
+  justify-content: start;
+  grid-auto-flow: row dense;
 }
 
 /* Product Cards */
@@ -24,6 +27,8 @@
   justify-content: flex-start;
   height: 100%;
   gap: var(--spacing-sm);
+  position: static;
+  float: none;
 }
 
 .product-card img,

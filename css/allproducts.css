@@ -31,3 +31,32 @@
 .product-card-link .button {
   pointer-events: none;
 }
+
+.filters { 
+  display: flex; 
+  gap: var(--spacing-sm); 
+  align-items: center; 
+  margin: var(--spacing-sm) 0; 
+  flex-wrap: wrap; 
+}
+
+.filter { 
+  padding: .4rem .7rem; 
+  border: 1px solid var(--gray-medium); 
+  border-radius: .5rem; 
+  background: var(--gray-light); 
+  cursor: pointer; 
+}
+
+.filter.is-active { 
+  border-color: var(--color-main); 
+  color: var(--color-main); 
+}
+
+.product-card[hidden] { 
+  display: none !important; 
+}
+
+.product-card-link[hidden] {
+  display: none !important;
+}
