@@ -90,16 +90,16 @@ updatePrice();
     });
     const data = await res.json();
 
-//    if (data.ok) {
+    if (data.ok) {
       // Optional GA4 event if you’ve installed GA4 sitewide
-//      window.gtag?.("event", "purchase", {
-//        value: payload.amount,
-//        currency: "USD",
-//        items: [{ item_name: productId }],
-//      });
-//      window.location.href = "/thanks.html";
-//    } else {
-//      alert(data.error || "Something went sideways during payment.");
-//    }
+      window.gtag?.("event", "purchase", {
+        value: payload.amount,
+        currency: "USD",
+        items: [{ item_name: productId }],
+      });
+      window.location.href = "/thanks.html";
+    } else {
+      alert(data.error || "Something went sideways during payment.");
+    }
   });
 })();
