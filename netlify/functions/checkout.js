@@ -1,7 +1,6 @@
 // netlify/functions/checkout.js
 const crypto = require('crypto');
-const Square = require('square');
-const { Client } = Square; // don't use Environment enum
+const { Client, Environment } = require('square/legacy');
 
 // ---- price table ----
 const PRODUCTS = {
@@ -43,8 +42,11 @@ exports.handler = async (event) => {
       : 'sandbox';
 
     const client = new Client({
-      environment: envStr,                    // << string, not Environment.Sandbox/Production
-      accessToken: process.env.SQUARE_ACCESS_TOKEN
+      accessToken: process.env.SQUARE_ACCESS_TOKEN,
+      environment:
+        process.env.SQUARE_ENV === 'PRODUCTION'
+          ? Environment.Production
+          : Environment.Sandbox
     });
 
     const { sourceId, productId, options, amount, buyerEmail } = JSON.parse(event.body || '{}');
