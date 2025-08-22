@@ -1,0 +1,128 @@
+#story,
+#build {
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.photo-story {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-md);
+}
+
+.about-story {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.about-story-beside {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Section */
+.about-photo {
+  margin: var(--spacing-sm) auto var(--spacing-sm);
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: var(--radius-md);
+}
+
+/* Featured Callout */
+.featured-callout {
+  background-color: var(--gray-dark);
+  font-style: italic;
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) auto;
+  border-left: 5px solid var(--color-main);
+  font-size: var(--font-size-xl);
+  max-width: 75ch;
+  border-radius: var(--radius-md);
+}
+
+/* What I Build + Quick Facts */
+.quick-facts-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.main-content {
+  flex: 1 1 60%;
+}
+
+#build ul {
+  margin-bottom: var(--spacing-sm);
+}
+
+#build ul li::before {
+  content: "🪵 ";
+}
+
+.quick-facts {
+  flex: 1 1 35%;
+  background-color: var(--gray-dark);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+}
+
+#build .quick-facts ul {
+  margin-bottom: 0;
+}
+
+#build .quick-facts li::before {
+  content: "✔ ";
+  color: var(--color-main);
+}
+
+.quick-facts ul li {
+  margin-bottom: 0.5rem;
+  font-size: var(--font-size-base);
+}
+
+/* Call to Action */
+.about-cta {
+  background-color: var(--color-main);
+  padding: var(--spacing-md);
+  text-align: center;
+  border-radius: var(--radius-md);
+  margin: 0 auto 2rem;
+  max-width: 75ch;
+}
+
+.about-cta h2 {
+  margin-bottom: 0;
+}
+
+.about-cta p {
+  margin-bottom: 0;
+}
+
+.cta-button {
+  background-color: white;
+  color: var(--color-main);
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .photo-story {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .about-photo {
+    margin-top: -0.5rem;
+  }
+
+  .quick-facts {
+    display: none;
+  }
+}
