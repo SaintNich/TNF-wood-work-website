@@ -1,0 +1,11 @@
+.who-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#who-i-am p {
+  line-height: 1.7;
+}

@@ -1,0 +1,172 @@
+footer {
+  background-color: var(--gray-dark);
+  color: var(--color-text);
+  padding: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.footer-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.footer-logo-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.footer-logo img {
+  height: 100px;
+  width: auto;
+}
+
+.footer-nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sm);
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  font-size: var(--font-size-sm);
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.footer-subscribe {
+  width: 100%;
+  max-width: 400px;
+}
+
+.footer-subscribe form {
+  display: flex;
+  width: 100%;
+}
+
+.footer-subscribe input[type="email"] {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill) 0 0 var(--radius-pill);
+  border: none;
+  flex: 1;
+}
+
+.footer-subscribe button {
+  background-color: var(--color-main);
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-xl);
+}
+
+.footer-social a {
+  color: var(--color-text);
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: var(--gray-subtle);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: var(--spacing-md);
+  padding-top: 1.5rem;
+  font-size: var(--font-size-sm);
+  color: var(--gray-subtle);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Split footer nav into two columns and prevent wrapping */
+@media (max-width: 1190px) and (min-width: 711px) {
+  .footer-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 var(--spacing-md);
+  }
+
+  .footer-nav ul li {
+    flex: 1 1 45%;
+    text-align: left;
+    min-width: 150px;
+  }
+
+  .footer-nav a {
+    white-space: nowrap;
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Move footer nav to a single column and modify subscription area */
+@media (max-width: 710px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-md);
+  }
+
+  .footer-logo-nav,
+  .footer-contact {
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.85rem;
+  }
+
+  .footer-subscribe form {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .footer-subscribe input[type="email"],
+  .footer-subscribe button {
+    width: 100%;
+    border-radius: var(--radius-pill);
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    padding: var(--spacing-sm);
+  }
+}
