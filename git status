@@ -1,0 +1,159 @@
+[33mcommit 2fddbe87ab7996070d1d610c5e65e57b861c1bbe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Fri Aug 22 08:44:49 2025 -0400
+
+    Updated Extension prompted all items uncommitted
+
+[33mcommit 5e5c842b6152f75359a057782c333cb17e6e3e71[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Fri Aug 22 08:44:14 2025 -0400
+
+    Updated Extension prompted all items uncommitted.
+
+[33mcommit 0a22c0ec77fd41900f4a281d0def71746227b94b[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Thu Aug 21 21:23:42 2025 -0400
+
+    So many changes, too many to describe.
+
+[33mcommit d2cf2a945cf2d1efb743dbac5cfbc6f6530b26e6[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Wed Aug 20 21:11:21 2025 -0400
+
+    Remove obsolete product pages and related files: wall-mounted challenge coin holder, wooden entry sign, thanks page, robots.txt, and sitemap.xml.
+
+[33mcommit 342466c9d454340a7e51eb34e22aea747906a7d5[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 18 20:38:00 2025 -0400
+
+    restored to square/legacy
+
+[33mcommit 075688ff6c55b7c3dfe47c0ddae18454eaf76b04[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 18 20:28:12 2025 -0400
+
+    Removed environment reference
+
+[33mcommit f7ea56eb664df013ced60101e11dab8e581f4df9[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 18 20:20:07 2025 -0400
+
+    replaced ESM with CommonJS
+
+[33mcommit c7d38f17f93ca7b5b8f233f574863b40faad7abc[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 18 17:20:40 2025 -0400
+
+    Refactor checkout function to improve environment handling and error reporting; add NODE_VERSION to build environment in netlify.toml
+
+[33mcommit 112a65ec495f0452e455eaa829bdeb5ac48523f5[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 18 17:05:35 2025 -0400
+
+    test failed
+
+[33mcommit b43407bb7cb79d066bed53d46e5b7ddb74f47113[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 18 17:03:10 2025 -0400
+
+    testing for payment processing
+
+[33mcommit 280dd6ac70933d1fec5a954c56f98465b3bd28c7[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 18 16:56:33 2025 -0400
+
+    Refactor charcuterie board form layout and add thanks page
+
+[33mcommit 5324724c21688c67d5cb4405d48627e374f0be0b[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 18 16:24:13 2025 -0400
+
+    chore: initialize project with package.json and dependencies
+
+[33mcommit 9392ffe965fc1101cf3f326697f3c715ba848ca0[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 18 14:51:24 2025 -0400
+
+    made changes to the following files:
+            new file:   404.html
+            modified:   about.html
+            modified:   allproducts.html
+            modified:   contact.html
+            modified:   css/allproducts.css
+            modified:   css/layout.css
+            modified:   customprojectsgallery.html
+            renamed:    images/TNF Wood Work Logo.svg -> images/TNF-Wood-Work-Logo.svg
+            renamed:    images/TNF Wood Work Logo (Favicon).png -> images/favicon.png
+            new file:   images/og-default.jpg
+            renamed:    images/veteran_owned_flag_logo.svg -> images/veteran-owned-flag-logo.svg
+            modified:   index.html
+            modified:   js/book-holder.js
+            modified:   js/coin-holder.js
+            modified:   js/main.js
+            modified:   policies.html
+            modified:   products/charcuterie-board.html
+            modified:   products/drill-sergeant-hat-display.html
+            modified:   products/triangular-book-holder.html
+            modified:   products/us-flag-challenge-coin-display.html
+            renamed:    products/wall-mounted-challenge-coin-rack-custom-veteran-craftsmanship.html -> products/wall-mounted-challenge-coin-holder.html
+            modified:   products/wooden-entry-sign.html
+            new file:   robots.txt
+            new file:   sitemap.xml
+
+[33mcommit 5b5b22746ed48fa05bd0ec17932191e012179562[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Wed Aug 13 17:05:53 2025 -0400
+
+    Refactors site content and styles for clarity
+    
+    Updates the website's content and styling to improve clarity and user experience. This includes changes to the "About" page to better reflect the company's story and mission, modifications to product descriptions for accuracy, and styling adjustments for improved responsiveness on different devices. The quick facts section on the About page was also updated to better reflect current offerings.
+    
+    Added media queries for smaller screens where applicable
+
+[33mcommit 65727c353d37acc6636f65cc677129d873d87238[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Tue Aug 12 17:18:20 2025 -0400
+
+    Refactors product page layout and styling
+    
+    Improves the product page layout and styling for better user experience.
+    
+    - Updates the product page structure and CSS to create a more modern and responsive design.
+    - Removes obsolete hero CSS.
+    - Moves shared list styling to layout CSS and removes duplicate styling.
+    - Adjusts product details and shipping/returns sections for improved readability and visual appeal.
+    - Modifies JavaScript to align with the updated design.
+
+[33mcommit e312d68858d588382619521ef77d63c06a0312a1[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 11 19:47:16 2025 -0400
+
+    Add hot products section with styling for product display
+
+[33mcommit f31e1c27f2a8e823c57ad60ced9e20f6360717d9[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Mon Aug 11 17:21:59 2025 -0400
+
+    Refactor HTML and CSS for improved layout and styling
+    
+    - Updated the About and Contact pages to enhance content structure and accessibility.
+    - Changed blockquote to a simpler text format in the About section.
+    - Introduced a photo-story layout in the About section for better visual engagement.
+    - Adjusted heading levels for consistency and semantic clarity.
+    - Enhanced the Contact form with proper input names and autocomplete attributes.
+    - Removed obsolete customgallery.css and integrated its styles into a new customgallery.css file.
+    - Improved CSS styles across various files for better responsiveness and visual consistency.
+    - Updated policies.html to use <h2> tags for policy titles for better SEO and accessibility.
+    - Cleaned up unused CSS rules and optimized spacing variables for a more cohesive design.
+
+[33mcommit 53cc01913e91b50e7e3f0a2754e1bf619da7a2be[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Thu Aug 7 16:47:23 2025 -0400
+
+    Refactored all html and css files for consistency and efficiency. Removed hero.css and customgallery.css.
+
+[33mcommit 249a472b780d293dc0f369226d0b047d18345492[m
+Author: Josh Nichols <joshnichols84@me.com>
+Date:   Thu Aug 7 09:22:22 2025 -0400
+
+    Initial commit - TNF Wood Work site

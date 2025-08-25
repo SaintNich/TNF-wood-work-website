@@ -19,6 +19,10 @@
   <script type="module" src="/js/header-cart.js"></script>
   <script type="module" src="/js/checkout.js"></script>
   <script defer src="/js/main.js"></script>
+  <script>
+    window.SQUARE_APP_ID = "sandbox-sq0idb-RpHq5nEoIp_4myEsyfENyQ";
+    window.SQUARE_LOCATION_ID = "LXN18H6SAZEPM";
+  </script>
 </head>
 
 <body class="is-checkout">
@@ -54,11 +58,25 @@
       <label for="checkoutEmail">Email for receipt</label>
       <input id="checkoutEmail" type="email" required placeholder="you@example.com" />
     </section>
+    <section>
+      <h2>Shipping Address</h2>
+      <label>Name<input id="shipName" type="text" required /></label>
+      <label>Address Line 1<input id="shipAddress1" type="text" required /></label>
+      <label>Address Line 2<input id="shipAddress2" type="text" /></label>
+      <label>City<input id="shipCity" type="text" required /></label>
+      <label>State<input id="shipState" type="text" maxlength="2" required /></label>
+      <label>Zip Code<input id="shipZip" type="text" pattern="\\d{5}" required /></label>
+      <label>Country<input id="shipCountry" type="text" value="US" readonly /></label>
+    </section>
     <!-- Payment -->
     <section aria-label="Payment" style="margin-top:16px">
       <div id="card-container"></div>
-      <button id="payBtn" class="button" style="margin-top:12px">Pay Now</button>
-      <p class="mini-cart-note">All transactions secure and encrypted via Square.</p>
+        <div class="pay-btn">
+          <button id="payBtn" class="button">Pay Now</button>
+          <p class="mini-cart-note">All transactions secure and encrypted via Square.</p>
+        </div>
+        <button id="cartReturn" class="button">Return to Cart</button>
+        <button id="contShop" class="button">Continue Shopping</button>
     </section>
   </main>
 

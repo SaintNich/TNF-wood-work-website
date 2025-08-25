@@ -147,6 +147,10 @@ p {
   background-color: var(--color-main-dark);
 }
 
+.button.is-loading,
+button[aria-busy="true"] { opacity: .7; pointer-events: none; }
+
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -360,4 +364,25 @@ body.no-scroll {
 .is-checkout #miniCart,
 .is-checkout #miniCartOverlay {
   display: none !important;
+}
+
+.pay-btn p {
+  padding-left: var(--spacing-sm);
+}
+
+#payBtn {
+  margin-top: var(--spacing-md);
+}
+
+#cartReturn,
+#contShop {
+  margin: var(--spacing-md) 0;
+}
+
+#cartReturn {
+  margin-right: 0.5rem;
+}
+
+#contShop {
+  margin-left: 0.5rem;
 }

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,9 +19,10 @@
   },
   "homepage": "https://github.com/SaintNich/TNF-wood-work-website#readme",
   "dependencies": {
-    "square": "^43.0.1"
+    "square": "^43.0.1",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "netlify-cli": "^23.1.4"
+    "netlify-cli": "^23.3.1"
   }
 }

@@ -4,32 +4,41 @@ import { ensureOrderRef, getFileFromInput, getLogoUrlFromTextField, savePendingF
 const S = {
   addBtn: "#addToCartBtn",
   noVariation: "#price",
-  wood: "#wood-select", 
+  wood: "#wood-select",
   size: "#size-select",
   flag: "#flag-style",
-  phrase: "#phrase-select", 
+  phrase: "#phrase-select",
   engraving: "#custom-type",
   engravingText: "#custom-details, #engraving-text",
-  logoInput: "#engraving-file"
+  logoInput: "#engraving-file",
 };
 
-const fmtSelPrice = sel => {
+const fmtSelPrice = (sel) => {
   const el = document.querySelector(sel);
   if (!el) return 0;
   const optPrice = el.selectedOptions?.[0]?.getAttribute?.("data-price");
   const elPrice = el.getAttribute?.("data-price");
   const p = optPrice ?? elPrice;
   return p ? parseInt(p, 10) : 0;
-}
+};
 
-const getVal = sel => document.querySelector(sel)?.value || '';
+const getOversizeFee = (sel) => {
+  const el = document.querySelector(sel);
+  if (!el) return 0;
+  const opt = el.selectedOptions?.[0];
+  const fee = opt?.getAttribute?.("data-oversize-fee");
+  return fee ? parseInt(fee, 10) : 0;
+};
+
+const getVal = (sel) => document.querySelector(sel)?.value || "";
 
 function getConfig() {
-  const el = document.getElementById('productCfg');
+  const el = document.getElementById("productCfg");
   return {
-    id: el?.dataset.id || 'unknown',
-    title: el?.dataset.title || 'Product',
-    image: el?.dataset.image.startsWith('/') ? el.dataset.image: `/${(el?.dataset.image||'').replace(/^\/+/,'')}`
+    id: el?.dataset.id || "unknown",
+    title: el?.dataset.title || "Product",
+    image: el?.dataset.image?.startsWith("/") ? el.dataset.image : `/${(el?.dataset.image || "").replace(/^\/+/, "")}`,
+    weightLb: Number(el?.dataset.weightLb) || 0,
   };
 }
 
@@ -38,9 +47,12 @@ function getSelectedOptions() {
   const size = getVal(S.size) ?? 0;
   const flag = getVal(S.flag) ?? 0;
   const phrase = getVal(S.phrase) ?? 0;
+
   const engravingTextRaw = document.querySelector(S.engravingText)?.value?.trim() || "";
+  // If there is no customization selector but the user entered engraving text, treat as customization
   let customization = getVal(S.engraving) || (engravingTextRaw ? "engraving" : "none");
-  const engravingText = customization !== "none" ? (getVal(S.engravingText) || "").trim() : "";
+  const engravingText = customization !== "none" ? engravingTextRaw : "";
+
   return { wood, size, flag, phrase, customization, engravingText };
 }
 
@@ -52,27 +64,34 @@ function optionsSummary(o) {
 }
 
 function hasAnyOptions() {
-  return [S.wood, S.size, S.engraving].some((sel) => document.querySelector(sel));
+  return [S.wood, S.size, S.flag, S.phrase, S.engraving].some((sel) => document.querySelector(sel));
 }
 
 function computeLineItemPriceCents(opts) {
   const base = fmtSelPrice(S.noVariation);
   if (!hasAnyOptions()) {
     if (!Number.isFinite(base) || base <= 0) {
-      console.warn("Base price missing or invalid on #price. Set data-price in cents.", { base, opts });
+      console.warn("Base price missing or invalid on #price. Set data-price in cents (e.g. 10999).", { base, opts });
     }
     return base;
   }
+
   const wood = fmtSelPrice(S.wood);
   const size = fmtSelPrice(S.size);
+  const flag = fmtSelPrice(S.flag);
+  const phrase = fmtSelPrice(S.phrase);
   const engr = fmtSelPrice(S.engraving);
-  const total = Number(base) + Number(wood) + Number(size) + Number(engr);
+
+  const total = Number(base) + Number(wood) + Number(size) + Number(flag) + Number(phrase) + Number(engr);
+
   if (!Number.isFinite(total) || total <= 0) {
     console.warn("Price fell back to 0 - check your option values or data-price attributes.", {
       opts,
       base,
       wood,
       size,
+      flag,
+      phrase,
       engr,
     });
   }
@@ -88,11 +107,14 @@ function onAdd(e) {
   if (file) { savePendingFile(file, orderRef).catch(console.warn); }
   
   const priceCents = computeLineItemPriceCents(opts, cfg);
+  const oversizeFeeCents = getOversizeFee(S.size)
 
   addToCart({
     productId: cfg.id,
     title: cfg.title,
     image: cfg.image,
+    weightLb: cfg.weightLb,
+    oversizeFeeCents,
     options: { 
       ...opts,
       orderRef,
@@ -123,18 +145,14 @@ function onAdd(e) {
   });
 
   // Open mini-cart if available; fallback to /cart
-  (
-    window.tnf?.openMiniCart ||
-    (() => {
-      window.location.href = "/cart";
-    })
-  )();
+  (window.tnf?.openMiniCart || (() => { window.location.href = "/cart"; }))();
 }
 
+// ----- Price display helpers -----
 const centsToUSD = (cents) => {
   const n = Number(cents) || 0;
   return (n / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
-}
+};
 
 function renderDisplayPrice() {
   const el = document.querySelector("#price");
@@ -145,13 +163,17 @@ function renderDisplayPrice() {
 }
 
 function init() {
+  // Initialize the visible price so we never show $0.00
   renderDisplayPrice();
-  if(hasAnyOptions()) {
-    [S.wood, S.size, S.engraving]
+
+  // If options exist, keep price in sync as the user changes them
+  if (hasAnyOptions()) {
+    [S.wood, S.size, S.flag, S.phrase, S.engraving]
       .map((sel) => document.querySelector(sel))
       .filter(Boolean)
       .forEach((node) => node.addEventListener("change", renderDisplayPrice));
   }
+
   const btn = document.querySelector(S.addBtn);
   if (!btn) {
     console.warn("Add to Cart button not found");

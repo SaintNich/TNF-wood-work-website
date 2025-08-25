@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/contact.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="modulepreload" href="/js/cart.js" />
     <link rel="modulepreload" href="/js/upload.js" />
@@ -23,11 +22,10 @@
     <script type="module" src="/js/mini-cart.js"></script>
     <script defer src="/js/main.js"></script>
   </head>
-  
   <body>
     <header>
       <div class="headerlogo">
-        <a href="index.html">
+        <a href="/index.html">
           <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" />
         </a>
       </div>
@@ -41,26 +39,13 @@
           <li><a href="/contact.html">Contact Us</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/customprojectsgallery.html">Custom Projects Gallery</a></li>
-          <li>
-            <a
-              href="/cart.html"
-              id="headerCartLink"
-              class="header-cart-toggle"
-              aria-haspopup="dialog"
-              aria-controls="miniCart"
-              aria-expanded="false">
+        </ul>
+      </nav>
+      <a href="/cart.html" id="headerCartLink" class="header-cart-toggle" aria-haspopup="dialog" aria-controls="miniCart" aria-expanded="false">
               <span class="icon" aria-hidden="true">🛒</span>
               <span class="sr-only">Cart</span>
               <span id="headerCartCount" class="cart-count" aria-live="polite">0</span>
             </a>
-          </li>
-          <li>
-            <a href="/checkout.html" id="headerCheckoutLink" class="button button--secondary header-checkout"
-              >Checkout</a
-            >
-          </li>
-        </ul>
-      </nav>
       <img class="vet-owned-logo" src="/images/veteran-owned-flag-logo.svg" alt="Veteran-Owned business logo" />
     </header>
 
@@ -92,7 +77,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-logo-nav">
-          <a href="/index.html" class="footer-logo">
+          <a class="footer-logo" href="/index.html">
             <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work Logo" />
           </a>
           <nav class="footer-nav">
