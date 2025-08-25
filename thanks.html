@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Thanks | TNF Wood Work</title>
+    <title>Thank you for your order | TNF Wood Work</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/header.css" />
@@ -40,11 +41,23 @@
       <img class="vet-owned-logo" src="/images/veteran-owned-flag-logo.svg" alt="Veteran-Owned business logo" />
     </header>
     
-    <main class="container" style="padding: 3rem 1rem; text-align: center">
-      <h1>Thanks—message received.</h1>
-      <p>I’ll get back to you within 1–2 business days.</p>
-      <p><a href="/allproducts.html">Shop All</a> · <a href="/customprojectsgallery.html">See Custom Work</a></p>
-    </main>
+    <main id="thanks" class="section is-checkout">
+    <div class="container">
+      <header class="section-centered">
+        <h1>Thank you for your order.</h1>
+        <p class="mini-cart-note" id="thanksSub">We’ll email tracking when it ships.</p>
+      </header>
+
+      <section id="orderMeta" class="section"></section>
+      <section id="orderSummary" class="section"></section>
+      <section id="nextSteps" class="section"></section>
+
+      <!-- Netlify Form registration for uploads -->
+      <form name="tnf-upload" netlify hidden></form>
+    </div>
+
+    <script type="module" src="/js/thanks.js"></script>
+  </main>
 
     <footer>
       <div class="footer-content">

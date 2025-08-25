@@ -180,6 +180,20 @@ async function onPay(card) {
     // For your own visibility while testing
     console.log("[ORDER OK]", { orderId: out.orderId, paymentId: out.paymentId });
 
+    const snapshot = {
+      orderRef,
+      email,
+      address,
+      items: itemsForServer,
+      quote,
+      totals: out.totals || null,
+      receiptUrl: out.receiptUrl || null,
+      createdAt: new Date().toISOString(),
+    }
+    try {
+      sessionStorage.setItem(`tnf_last_order_${orderRef}`, JSON.stringify(snapshot));
+    } catch {}
+
     clearCart();
     // Keep button disabled to prevent double-submits; redirect away
     window.location.href = `/thanks.html?ref=${encodeURIComponent(orderRef)}`;
