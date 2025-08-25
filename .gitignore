@@ -4,3 +4,6 @@ dist/
 *.log
 # Local Netlify folder
 .netlify
+.git-backup-*.zip
+.git status
+.git-backup.tgz
