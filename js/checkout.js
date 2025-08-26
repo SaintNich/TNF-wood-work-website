@@ -1,5 +1,5 @@
 import { getCart, clearCart } from "/js/cart.js";
-import { submitPendingUpload, hasPendingFile } from "/js/upload.js";
+import { submitPendingUpload, hasPendingFile, ensureOrderRef } from "/js/upload.js";
 
 const APP_ID = window.SQUARE_APP_ID || "";
 const LOCATION_ID = window.SQUARE_LOCATION_ID || "";
@@ -130,7 +130,7 @@ async function onPay(card) {
   const items = getCart();
   if (!items.length) { alert("Your cart is empty."); return; }
 
-  const orderRef = ensureOrderRef(items);
+  const orderRef = items[0]?.options?.orderRef || ensureOrderRef();
   const email = document.getElementById("checkoutEmail")?.value || "";
   const address = getShippingAddress();
 

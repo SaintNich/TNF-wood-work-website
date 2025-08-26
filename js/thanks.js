@@ -127,6 +127,9 @@ function init() {
   const orderRef = getOrderRefFromUrl();
   const snapshot = loadSnapshot(orderRef) || { orderRef, items: [] };
 
+  document.getElementById("nf-orderRef")?.setAttribute("value", snapshot.orderRef || "");
+  document.getElementById("nf-email")?.setAttribute("value", snapshot.email || "");
+
   const sub = $("#thanksSub");
   if (sub) sub.textContent = "We appreciate your trust. Tracking will hit your inbox as soon as it ships.";
 

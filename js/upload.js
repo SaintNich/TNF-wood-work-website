@@ -44,11 +44,19 @@ async function delFile(key) {
   });
 }
 
-// ---- Public helpers ----
+function makeNiceRef() {
+  const d = new Date();
+  const y = String(d.getFullYear()).slice(-2);
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  const rand = Math.random().toString(36).toUpperCase().slice(2, 6); // 4 chars
+  return `TNF-${y}${m}${day}-${rand}`; // e.g., TNF-250826-7X3K
+}
+
 export function ensureOrderRef() {
   let ref = localStorage.getItem(ORDER_REF_KEY);
   if (!ref) {
-    ref = crypto.randomUUID();
+    ref = makeNiceRef();
     localStorage.setItem(ORDER_REF_KEY, ref);
   }
   return ref;
@@ -91,6 +99,9 @@ export async function submitPendingUpload(orderRef, extraFields = {}) {
   const fd = new FormData();
   fd.append("form-name", "tnf-upload");
   fd.append("orderRef", orderRef);
+  fd.append("filename", rec.name || "logo");
+  fd.append("filetype", rec.type || "application/octet-stream");
+  fd.append("filesize", String(rec.size || 0));
   Object.entries(extraFields).forEach(([k, v]) => fd.append(k, v));
 
   // Recreate a File from the stored Blob
