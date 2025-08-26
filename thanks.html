@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/thanks.css" />
     <link rel="modulepreload" href="/js/cart.js" />
     <script type="module" src="/js/header-cart.js"></script>
     <script type="module" src="/js/mini-cart.js"></script>
@@ -43,14 +44,14 @@
     
     <main id="thanks" class="section is-checkout">
     <div class="container">
-      <header class="section-centered">
+      <section class="section-centered">
         <h1>Thank you for your order.</h1>
-        <p class="mini-cart-note" id="thanksSub">We’ll email tracking when it ships.</p>
-      </header>
+        <p class="mini-cart-note" id="thanksSub"></p>
+      </section>
 
+      <section id="nextSteps" class="section"></section>
       <section id="orderMeta" class="section"></section>
       <section id="orderSummary" class="section"></section>
-      <section id="nextSteps" class="section"></section>
 
       <!-- Netlify Form registration for uploads -->
       <form name="tnf-upload" netlify hidden></form>

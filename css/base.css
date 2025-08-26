@@ -335,7 +335,7 @@ body.no-scroll {
 }
 
 .mini-cart-footer {
-  padding: 16px;
+  padding: var(--spacing-sm);
   border-top: 1px solid var(--gray-light);
   display: grid;
   gap: 10px;
@@ -345,11 +345,10 @@ body.no-scroll {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
 }
 
 .mini-cart-note {
-  color: var(--color-text);
   font-size: var(--font-size-sm);
   margin: 0;
 }

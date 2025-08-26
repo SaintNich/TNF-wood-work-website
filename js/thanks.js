@@ -72,8 +72,8 @@ async function handlePendingUpload(orderRef, email) {
         <li>We’ll start prepping your order in the shop.</li>
         <li>If you added customization or uploaded a logo, I’ll email you with any questions or a quick mockup for approval.</li>
         <li>Shipping updates and tracking will be sent to your email.</li>
+        <li>Questions? Reach Josh at <a href="mailto:josh@tnfwoodwork.com">josh@tnfwoodwork.com</a>.</li>
       </ul>
-      <p class="mini-cart-note">Questions? Reach Josh at <a href="mailto:josh@tnfwoodwork.com">josh@tnfwoodwork.com</a>.</p>
     `;
     return;
   }
@@ -85,8 +85,8 @@ async function handlePendingUpload(orderRef, email) {
       <li>We’ll start prepping your order in the shop.</li>
       <li>I’ll review your upload and email you a quick mockup if needed.</li>
       <li>Shipping updates and tracking will be sent to your email.</li>
+      <li>Questions? Reach Josh at <a href="mailto:josh@tnfwoodwork.com">josh@tnfwoodwork.com</a>.</li>
     </ul>
-    <p class="mini-cart-note">Questions? Reach Josh at <a href="mailto:josh@tnfwoodwork.com">josh@tnfwoodwork.com</a>.</p>
   `;
 
   try {

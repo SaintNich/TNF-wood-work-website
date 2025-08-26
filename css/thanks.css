@@ -1,0 +1,33 @@
+#thanks .section-centered,
+#nextSteps,
+#orderMeta,
+#orderSummary {
+    padding: var(--spacing-sm) 0;
+}
+
+#thanksSub {
+    font-size: var(--font-size-xl);
+}
+
+#orderMeta p {
+    margin-bottom: 0;
+}
+
+#orderSummary {
+    border: 1px solid var(--color-text);
+    border-radius: var(--radius-md);
+    padding-left: var(--spacing-sm);
+}
+
+#orderSummary .mini-cart-footer {
+    gap: 0;
+    margin-left: -1rem;
+}
+
+#orderSummary .mini-cart-subtotal {
+    padding-left: var(--spacing-sm);
+}
+
+#orderSummary .button {
+    margin-top: var(--spacing-md);
+}
