@@ -110,8 +110,9 @@
         <div class="footer-contact">
           <div class="footer-subscribe">
             <h3>Subscribe to The Grainline</h3>
-            <form name="newsletter" method="post" data-netlify="true" action="/thanks-grainline.html">
-              <input type="hidden" name="form-name" value="newsletter" />
+            <form name="grainline" method="post" data-netlify="true" netlify-honeypot="bot-field" action="/thanks-grainline.html">
+              <input type="hidden" name="form-name" value="grainline" />
+              <p class="sr-only"><label>Don't fill this out: <input name="bot-field"></label></p>
               <label class="sr-only" for="nl-email">Email</label>
               <input id="nl-email" type="email" name="email" placeholder="Your email address" required />
               <button type="submit">I'm In!</button>
