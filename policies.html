@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/policies.css" />
     <meta property="og:site_name" content="TNF Wood Work" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Shop Policies | TNF Wood Work, Chapin SC" />
@@ -43,7 +44,6 @@
     <script type="module" src="/js/mini-cart.js"></script>
     <script defer src="/js/main.js"></script>
   </head>
-
   <body>
     <header>
       <div class="headerlogo">
@@ -70,6 +70,7 @@
       </a>
       <img class="vet-owned-logo" src="/images/veteran-owned-flag-logo.svg" alt="Veteran-Owned business logo" />
     </header>
+
     <main class="container">
       <section class="page-intro">
         <h1>Shop Policies</h1>
@@ -204,7 +205,7 @@
         <div class="footer-contact">
           <div class="footer-subscribe">
             <h3>Subscribe to The Grainline</h3>
-            <form name="newsletter" method="post" data-netlify="true" action="/thanks.html#newsletter">
+            <form name="newsletter" method="post" data-netlify="true" action="/thanks-grainline.html">
               <input type="hidden" name="form-name" value="newsletter" />
               <label class="sr-only" for="nl-email">Email</label>
               <input id="nl-email" type="email" name="email" placeholder="Your email address" required />
@@ -248,6 +249,10 @@
       <p id="miniCartDesc" class="sr-only">Review items in your cart, update quantities, or proceed to checkout.</p>
 
       <div class="mini-cart-body">
+        <div id="miniCartEmpty" class="mini-cart-empty" hidden>
+          <p>Your cart's empty. Let's fix that.</p>
+          <a class="button" href="/allproducts.html">Browse Products</a>
+        </div>
         <ul id="miniCartItems" class="mini-cart-items" aria-live="polite" aria-relevant="all"></ul>
       </div>
 
@@ -258,7 +263,7 @@
         </div>
         <p class="mini-cart-note">Shipping & tax calculated at checkout.</p>
         <div class="mini-cart-actions">
-          <a href="/cart" class="button button--secondary">View Cart</a>
+          <a href="/cart" id="miniCartViewCartButton" class="button button--secondary">View Cart</a>
           <a href="/checkout" id="miniCartCheckoutBtn" class="button">Proceed to Checkout</a>
         </div>
       </footer>

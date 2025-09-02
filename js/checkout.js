@@ -64,9 +64,9 @@ async function initSquare() {
   return { payments, card };
 }
 
-function ensureOrderRef(items) {
+/* function ensureOrderRef(items) {
   return items[0]?.options?.orderRef || crypto.randomUUID();
-}
+} */
 
 async function fetchQuote() {
   const items = getCart();

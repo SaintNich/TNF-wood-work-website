@@ -15,6 +15,8 @@ const els = {
   subtotal: document.getElementById("miniCartSubtotal"),
   closeBtn: null,
   checkoutBtn: null,
+  empty: document.getElementById("miniCartEmpty"),
+  actions: document.querySelector(".mini-cart-actions"),
 };
 let lastFocused = null;
 
@@ -71,44 +73,48 @@ function normalizeImgPath(p) {
 
 function render() {
   const cart = getCart();
+  const hasItems = cart.length > 0;
+  els.empty.hidden = hasItems;
+  els.items.hidden = !hasItems;
+  els.actions.hidden = !hasItems;
   els.items.innerHTML = "";
-  if (!cart.length) {
-    els.items.innerHTML = `<li class="mini-cart-item"><div class="title">Your cart’s empty. Let’s fix that.</div></li>`;
-  } else {
-    const frag = document.createDocumentFragment();
-    cart.forEach((item) => {
-      const li = document.createElement("li");
-      li.className = "mini-cart-item";
-      li.dataset.id = item.id;
-
-      // Safe image + price handling
-      const src = normalizeImgPath(item.image);
-      const lineCents = (Number(item.priceCents) || 0) * (item.qty || 1);
-      const hasEngr = item.options?.engravingText;
-      const hasLogo = !!item.options?.uploadUrl;
-
-      li.innerHTML = `
-        <img src="${src}" alt="${item.title}">
-        <div>
-          <div class="title">${item.title}</div>
-          <div class="options">${item.optionsLabel || ""}</div>
-          ${item.options?.filePending ? `<div class="options">Logo: attached (will upload at checkout)</div>` : ''}
-          ${hasEngr ? `<div class="options">Engraving: "${String(item.options.engravingText).slice(0,60)}"</div>` : ''}
-          ${hasLogo ? `<div class="options">Logo: <a href="${item.options.uploadUrl}" target="_blank" rel="noopener">view file</a></div>` : ''}
-          <div class="row">
-            <div class="qty" aria-label="Quantity controls">
-              <button type="button" data-act="dec" aria-label="Decrease quantity">−</button>
-              <input type="text" inputmode="numeric" pattern="[0-9]*" value="${item.qty || 1}" aria-label="Quantity">
-              <button type="button" data-act="inc" aria-label="Increase quantity">+</button>
-              <button type="button" class="remove" data-act="remove" aria-label="Remove item">Remove</button>
-            </div>
-            <div class="price">${fmtUSD(lineCents)}</div>
-          </div>
-        </div>`;
-      frag.appendChild(li);
-    });
-    els.items.appendChild(frag);
+  if (!hasItems) {
+    els.subtotal.textContent = fmtUSD(0);
+    return;
   }
+  const frag = document.createDocumentFragment();
+  cart.forEach((item) => {
+    const li = document.createElement("li");
+    li.className = "mini-cart-item";
+    li.dataset.id = item.id;
+
+    // Safe image + price handling
+    const src = normalizeImgPath(item.image);
+    const lineCents = (Number(item.priceCents) || 0) * (item.qty || 1);
+    const hasEngr = item.options?.engravingText;
+    const hasLogo = !!item.options?.uploadUrl;
+
+    li.innerHTML = `
+      <img src="${src}" alt="${item.title}">
+      <div>
+        <div class="title">${item.title}</div>
+        <div class="options">${item.optionsLabel || ""}</div>
+        ${item.options?.filePending ? `<div class="options">Logo: attached (will upload at checkout)</div>` : ''}
+        ${hasEngr ? `<div class="options">Engraving: "${String(item.options.engravingText).slice(0,60)}"</div>` : ''}
+        ${hasLogo ? `<div class="options">Logo: <a href="${item.options.uploadUrl}" target="_blank" rel="noopener">view file</a></div>` : ''}
+        <div class="row">
+          <div class="qty" aria-label="Quantity controls">
+            <button type="button" data-act="dec" aria-label="Decrease quantity">−</button>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" value="${item.qty || 1}" aria-label="Quantity">
+            <button type="button" data-act="inc" aria-label="Increase quantity">+</button>
+            <button type="button" class="remove" data-act="remove" aria-label="Remove item">Remove</button>
+          </div>
+          <div class="price">${fmtUSD(lineCents)}</div>
+        </div>
+      </div>`;
+    frag.appendChild(li);
+  });
+  els.items.appendChild(frag);
   els.subtotal.textContent = fmtUSD(subtotalCents());
 }
 

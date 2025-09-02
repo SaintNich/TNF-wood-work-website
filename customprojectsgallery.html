@@ -44,11 +44,12 @@
     <script type="module" src="/js/mini-cart.js"></script>
     <script defer src="/js/main.js"></script>
   </head>
-
   <body>
     <header>
       <div class="headerlogo">
-        <a href="/index.html"><img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" /></a>
+        <a href="/index.html">
+          <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" />
+        </a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
         <i class="fas fa-bars"></i>
@@ -242,9 +243,7 @@
               <li><a href="/allproducts.html">Shop All</a></li>
               <li><a href="/contact.html">Contact Us</a></li>
               <li><a href="/about.html">About</a></li>
-              <li>
-                <a href="/customprojectsgallery.html">Custom Projects Gallery</a>
-              </li>
+              <li><a href="/customprojectsgallery.html">Custom Projects Gallery</a></li>
               <li><a href="/policies.html">Shop Policies</a></li>
             </ul>
           </nav>
@@ -252,7 +251,7 @@
         <div class="footer-contact">
           <div class="footer-subscribe">
             <h3>Subscribe to The Grainline</h3>
-            <form name="newsletter" method="post" data-netlify="true" action="/thanks.html#newsletter">
+            <form name="newsletter" method="post" data-netlify="true" action="/thanks-grainline.html">
               <input type="hidden" name="form-name" value="newsletter" />
               <label class="sr-only" for="nl-email">Email</label>
               <input id="nl-email" type="email" name="email" placeholder="Your email address" required />
@@ -296,6 +295,10 @@
       <p id="miniCartDesc" class="sr-only">Review items in your cart, update quantities, or proceed to checkout.</p>
 
       <div class="mini-cart-body">
+        <div id="miniCartEmpty" class="mini-cart-empty" hidden>
+          <p>Your cart's empty. Let's fix that.</p>
+          <a class="button" href="/allproducts.html">Browse Products</a>
+        </div>
         <ul id="miniCartItems" class="mini-cart-items" aria-live="polite" aria-relevant="all"></ul>
       </div>
 
@@ -306,7 +309,7 @@
         </div>
         <p class="mini-cart-note">Shipping & tax calculated at checkout.</p>
         <div class="mini-cart-actions">
-          <a href="/cart" class="button button--secondary">View Cart</a>
+          <a href="/cart" id="miniCartViewCartButton" class="button button--secondary">View Cart</a>
           <a href="/checkout" id="miniCartCheckoutBtn" class="button">Proceed to Checkout</a>
         </div>
       </footer>

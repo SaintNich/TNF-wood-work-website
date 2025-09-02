@@ -169,4 +169,8 @@ footer {
   .footer-bottom {
     padding: var(--spacing-sm);
   }
+
+  .cart-footer {
+    margin-top: auto;
+  }
 }

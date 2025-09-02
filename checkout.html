@@ -8,27 +8,23 @@
   <link rel="stylesheet" href="/css/layout.css" />
   <link rel="stylesheet" href="/css/header.css" />
   <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/checkout.css" />
   <link rel="modulepreload" href="/js/cart.js" />
   <link rel="modulepreload" href="/js/upload.js" />
+  <script type="module" src="/js/header-cart.js"></script>
+  <script defer src="/js/main.js"></script>
   <!-- Square SDK (Sandbox). Swap to production CDN + IDs at cutover. -->
   <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
   <script>
     window.SQUARE_APP_ID = "sandbox-sq0idb-RpHq5nEoIp_4myEsyfENyQ";
     window.SQUARE_LOCATION_ID = "LXN18H6SAZEPM";
   </script>
-  <script type="module" src="/js/header-cart.js"></script>
   <script type="module" src="/js/checkout.js"></script>
-  <script defer src="/js/main.js"></script>
-  <script>
-    window.SQUARE_APP_ID = "sandbox-sq0idb-RpHq5nEoIp_4myEsyfENyQ";
-    window.SQUARE_LOCATION_ID = "LXN18H6SAZEPM";
-  </script>
 </head>
-
 <body class="is-checkout">
   <header>
     <div class="headerlogo">
-      <a href="index.html">
+        <a href="/index.html">
         <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" />
       </a>
     </div>
@@ -52,38 +48,80 @@
 
   <main class="container" id="checkoutPage" aria-labelledby="checkoutTitle">
     <h1 id="checkoutTitle">Checkout</h1>
-    <section id="orderSummary" aria-label="Order summary"></section>
+    
     <!-- Contact -->
+    <section id="orderSummary" aria-label="Order summary"></section>
     <section aria-label="Contact">
-      <label for="checkoutEmail">Email for receipt</label>
-      <input id="checkoutEmail" type="email" required placeholder="you@example.com" />
+      
     </section>
+    
     <section>
-      <h2>Shipping Address</h2>
-      <label>Name<input id="shipName" type="text" required /></label>
-      <label>Address Line 1<input id="shipAddress1" type="text" required /></label>
-      <label>Address Line 2<input id="shipAddress2" type="text" /></label>
-      <label>City<input id="shipCity" type="text" required /></label>
-      <label>State<input id="shipState" type="text" maxlength="2" required /></label>
-      <label>Zip Code<input id="shipZip" type="text" pattern="\\d{5}" required /></label>
-      <label>Country<input id="shipCountry" type="text" value="US" readonly /></label>
+      <h2>Shipping Information</h2>
+      <div class="field checkout-name">
+        <label for="shipName">Full Name</label>
+        <input id="shipName" type="text" name="full-name" autocomplete="name" required placeholder="John Smith" />
+      </div>
+      <fieldset class="checkout-contact">
+        <legend>Contact</legend>
+        <div class="field checkout-email">
+          <label for="checkoutEmail">Email Address</label>
+          <input id="checkoutEmail" type="email" name="email" autocomplete="email" inputmode="email" required
+            placeholder="youremail@example.com" aria-describedby="email-hint" />
+          <div id="email-hint" class="hint">I'll send any order updates here.</div>
+        </div>
+        <div class="field checkout-phone">
+          <label for="checkoutPhone">Phone Number</label>
+          <input id="checkoutPhone" type="tel" name="phone" autocomplete="tel" inputmode="tel" aria-describedby="tel-hint" />
+          <div id="tel-hint" class="hint">For delivery issues only.</div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Shipping Address</legend>
+        <div class="checkout-add-combined">
+          <div class="field checkout-add1">
+            <label for="shipAddress1">Address Line 1</label>
+            <input id="shipAddress1" name="address-line1" autocomplete="address-line1" required />
+          </div>
+          <div class="field checkout-add2">
+            <label for="shipAddress2">Address Line 2 <span class="optional">(optional)</span></label>
+            <input id="shipAddress2" name="address-line2" autocomplete="address-line2" />
+          </div>
+        </div>
+        <div class="checkout-csz">
+          <div class="field checkout-city">
+            <label for="shipCity">City</label>
+            <input id="shipCity" name="city" autocomplete="address-level2" required />
+          </div>
+          <div class="field checkout-state">
+            <label for="shipState">State</label>
+            <input id="shipState" name="address-level1" autocomplete="address-level1" maxlength="2" required />
+          </div>
+          <div class="field checkout-zip">
+            <label for="shipZip">Zip Code</label>
+            <input id="shipZip" name="postal-code" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]*" required />
+          </div>
+        </div>
+        <div class="field checkout-country">
+          <label for="shipCountry">Country</label>
+          <input id="shipCountry" name="country" type="text" value="US" readonly />
+        </div>
+      </fieldset>
     </section>
     <!-- Payment -->
     <section aria-label="Payment" style="margin-top:16px">
-      <div id="card-container"></div>
+      <div id="card-container">
         <div class="pay-btn">
           <button id="payBtn" class="button">Pay Now</button>
           <p class="mini-cart-note">All transactions secure and encrypted via Square.</p>
         </div>
-        <button id="cartReturn" class="button">Return to Cart</button>
-        <button id="contShop" class="button">Continue Shopping</button>
+      </div>
     </section>
   </main>
 
   <footer>
       <div class="footer-content">
         <div class="footer-logo-nav">
-          <a href="/index.html" class="footer-logo">
+          <a class="footer-logo" href="/index.html">
             <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work Logo" />
           </a>
           <nav class="footer-nav">
@@ -100,7 +138,7 @@
         <div class="footer-contact">
           <div class="footer-subscribe">
             <h3>Subscribe to The Grainline</h3>
-            <form name="newsletter" method="post" data-netlify="true" action="/thanks.html#newsletter">
+            <form name="newsletter" method="post" data-netlify="true" action="/thanks-grainline.html">
               <input type="hidden" name="form-name" value="newsletter" />
               <label class="sr-only" for="nl-email">Email</label>
               <input id="nl-email" type="email" name="email" placeholder="Your email address" required />

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thanks — We Got Your Message | TNF Wood Work</title>
+  <meta 
+    name="description" 
+    content="Thanks for reaching out to TNF Wood Work. We received your message and will get back to you soon." />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <meta name="theme-color" content="#004aad" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;800&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/thanks.css" />
+  <link rel="modulepreload" href="/js/cart.js" />
+  <script type="module" src="/js/header-cart.js"></script>
+  <script type="module" src="/js/mini-cart.js"></script>
+  <script defer src="/js/main.js"></script>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Thanks — We Got Your Message | TNF Wood Work" />
+  <meta 
+    property="og:description" 
+    content="We received your message. A quick, straightforward reply is on the way." />
+  <meta property="og:image" content="https://www.tnfwoodwork.com/images/og-default.jpg" />
+</head>
+  <body class="page-wrapper">
+  <header>
+      <div class="headerlogo">
+        <a href="/index.html">
+          <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" />
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="sticky-nav" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/allproducts.html">Shop All</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/customprojectsgallery.html">Custom Projects Gallery</a></li>
+        </ul>
+      </nav>
+      <a href="/cart.html" id="headerCartLink" class="header-cart-toggle" aria-haspopup="dialog" aria-controls="miniCart" aria-expanded="false">
+              <span class="icon" aria-hidden="true">🛒</span>
+              <span class="sr-only">Cart</span>
+              <span id="headerCartCount" class="cart-count" aria-live="polite">0</span>
+      </a>
+      <img class="vet-owned-logo" src="/images/veteran-owned-flag-logo.svg" alt="Veteran-Owned business logo" />
+    </header>
+
+  <main id="thanks" class="section is-checkout">
+    <div class="container">
+      <div class="row">
+        <div>
+          <p>Message received</p>
+          <h1>Thanks for reaching out.</h1>
+          <p>We got your note and we’ll reply soon—usually within one business day.</p>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <h2>What happens next</h2>
+          <ul class="after-paragraph-list">
+            <li>We’ll read your message—no autoresponder runaround.</li>
+            <li>If it’s a custom build, we may ask a few quick questions on size, wood species, and timeline.</li>
+            <li>You’ll get a reply from Josh at <a href="mailto:josh@tnfwoodwork.com">josh@tnfwoodwork.com</a>.</li>
+          </ul>
+          <div>
+            <a class="btn btn-primary" href="/allproducts.html">Browse the shop</a>
+            <a class="btn" href="/customprojectsgallery.html">See custom work</a>
+            <a class="btn" href="/index.html">Back to home</a>
+          </div>
+          <p class="redirect-note">Redirecting to <a id="redirect-target" href="/allproducts.html"></a> in <span id="redirect-seconds">30</span>s… <a id="redirect-now" href="/allproducts.html">Go now</a></p>
+        </div>
+        <a side class="aside">
+          <strong>Heads up:</strong> We ship across the U.S. Local pickup/delivery available around Chapin, SC.
+        </a>
+      </div>
+    </div>
+  </main>
+
+    <footer class="cart-footer">
+      <div class="footer-content">
+        <div class="footer-logo-nav">
+          <a class="footer-logo" href="/index.html">
+            <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work Logo" />
+          </a>
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/allproducts.html">Shop All</a></li>
+              <li><a href="/contact.html">Contact Us</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/customprojectsgallery.html">Custom Projects Gallery</a></li>
+              <li><a href="/policies.html">Shop Policies</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-subscribe">
+            <h3>Subscribe to The Grainline</h3>
+            <form name="newsletter" method="post" data-netlify="true" action="/thanks-grainline.html">
+              <input type="hidden" name="form-name" value="newsletter" />
+              <label class="sr-only" for="nl-email">Email</label>
+              <input id="nl-email" type="email" name="email" placeholder="Your email address" required />
+              <button type="submit">I'm In!</button>
+            </form>
+          </div>
+          <div class="footer-social">
+            <a href="https://facebook.com/tnfwoodwork" target="_blank" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://tiktok.com/@tnfwoodwork" target="_blank" aria-label="TikTok"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+            <a href="https://youtube.com/@tnfwoodwork" target="_blank" aria-label="YouTube"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="mailto:josh@tnfwoodwork.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TNF Wood Work. Built to last. Made with grit, heart, and precision.</p>
+    </div>
+  </footer>
+
+  <!-- Redirect + utilities -->
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const next = params.get('next') || '/allproducts.html';
+      const delay = Math.max(0, parseInt(params.get('delay') || '30000', 10));
+      const targetEl = document.getElementById('redirect-target');
+      const nowEl = document.getElementById('redirect-now');
+      const secEl = document.getElementById('redirect-seconds');
+      targetEl.href = next; targetEl.textContent = next; nowEl.href = next;
+      const end = Date.now() + delay; const tick = () => {
+        const r = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+        secEl.textContent = String(r);
+        if (r > 0) requestAnimationFrame(tick);
+      }; tick();
+      setTimeout(() => { window.location.href = next; }, delay);
+      document.getElementById('year').textContent = new Date().getFullYear();
+      window.dataLayer = window.dataLayer || [];
+      window.fbq && fbq('trackCustom', 'ContactFormSubmitted');
+    })();
+  </script>
+
+  <!-- Google Analytics 4 (replace G-XXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+    gtag('event', 'contact_form_submitted');
+  </script>
+
+  <!-- Meta Pixel (replace PIXEL_ID) -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[]; t=b.createElement(e); t.async=!0;
+    t.src=v; s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'PIXEL_ID');
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'ContactFormSubmitted');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+</body>
+</html>

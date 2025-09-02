@@ -37,8 +37,10 @@ function renderSummary(summaryBox, snapshot) {
   const rows = items.length
     ? items.map((i) => `
         <li class="mini-cart-item">
-          <div class="title">${i.title || i.productId}</div>
-          ${i.optionsLabel ? `<div class="options">${i.optionsLabel}</div>` : ""}
+          <div class="title-with-options">
+            <div class="title">${i.title || i.productId}</div>
+            ${i.optionsLabel ? `<div class="options">Options: ${i.optionsLabel}</div>
+          </div>` : ""}
           <div class="row"><span>Qty ${i.qty || 1}</span><span class="price">${fmtUSD(Number(i.priceCents) * (i.qty || 1))}</span></div>
         </li>`).join("")
     : `<p class="mini-cart-note">We’ve got your order. Your detailed receipt has been emailed.</p>`;

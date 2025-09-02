@@ -8,7 +8,7 @@
       name="description"
       content="Custom campaign hat display in solid pine, engraved to your specs. Clean lines, stable base, and tribute-worthy craftsmanship. Built in Chapin, SC and shipped across the U.S." />
     <link rel="canonical" href="https://www.tnfwoodwork.com/products/drill-sergeant-hat-display.html" />
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
     <meta name="theme-color" content="#004aad" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -66,9 +66,13 @@
   <body>
     <header>
       <div class="headerlogo">
-        <a href="/index.html"><img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" /></a>
+        <a href="/index.html">
+          <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" />
+        </a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav class="sticky-nav" id="navMenu">
         <ul class="nav-list">
           <li><a href="/index.html">Home</a></li>
@@ -78,13 +82,7 @@
           <li><a href="/customprojectsgallery.html">Custom Projects Gallery</a></li>
         </ul>
       </nav>
-      <a
-        href="/cart.html"
-        id="headerCartLink"
-        class="header-cart-toggle"
-        aria-haspopup="dialog"
-        aria-controls="miniCart"
-        aria-expanded="false">
+      <a href="/cart.html" id="headerCartLink" class="header-cart-toggle" aria-haspopup="dialog" aria-controls="miniCart" aria-expanded="false">
         <span class="icon" aria-hidden="true">🛒</span>
         <span class="sr-only">Cart</span>
         <span id="headerCartCount" class="cart-count" aria-live="polite">0</span>
@@ -235,18 +233,16 @@
             </ul>
           </nav>
         </div>
-
         <div class="footer-contact">
           <div class="footer-subscribe">
             <h3>Subscribe to The Grainline</h3>
-            <form name="newsletter" method="post" data-netlify="true" action="/thanks.html#newsletter">
+            <form name="newsletter" method="post" data-netlify="true" action="/thanks-grainline.html">
               <input type="hidden" name="form-name" value="newsletter" />
               <label class="sr-only" for="nl-email">Email</label>
               <input id="nl-email" type="email" name="email" placeholder="Your email address" required />
               <button type="submit">I'm In!</button>
             </form>
           </div>
-
           <div class="footer-social">
             <a href="https://facebook.com/tnfwoodwork" target="_blank" aria-label="Facebook"
               ><i class="fab fa-facebook-f"></i
@@ -261,7 +257,6 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>&copy; 2025 TNF Wood Work. Built to last. Made with grit, heart, and precision.</p>
       </div>
@@ -285,6 +280,10 @@
       <p id="miniCartDesc" class="sr-only">Review items in your cart, update quantities, or proceed to checkout.</p>
 
       <div class="mini-cart-body">
+        <div id="miniCartEmpty" class="mini-cart-empty" hidden>
+          <p>Your cart's empty. Let's fix that.</p>
+          <a class="button" href="/allproducts.html">Browse Products</a>
+        </div>
         <ul id="miniCartItems" class="mini-cart-items" aria-live="polite" aria-relevant="all"></ul>
       </div>
 
@@ -295,7 +294,7 @@
         </div>
         <p class="mini-cart-note">Shipping & tax calculated at checkout.</p>
         <div class="mini-cart-actions">
-          <a href="/cart" class="button button--secondary">View Cart</a>
+          <a href="/cart" id="miniCartViewCartButton" class="button button--secondary">View Cart</a>
           <a href="/checkout" id="miniCartCheckoutBtn" class="button">Proceed to Checkout</a>
         </div>
       </footer>

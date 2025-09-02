@@ -22,7 +22,7 @@
     <script type="module" src="/js/mini-cart.js"></script>
     <script defer src="/js/main.js"></script>
   </head>
-  <body>
+  <body class="page-wrapper">
     <header>
       <div class="headerlogo">
         <a href="/index.html">
@@ -49,12 +49,12 @@
       <img class="vet-owned-logo" src="/images/veteran-owned-flag-logo.svg" alt="Veteran-Owned business logo" />
     </header>
 
-    <main class="container" id="cartPage" aria-labelledby="cartTitle">
+    <main class="container cart-main" id="cartPage" aria-labelledby="cartTitle">
       <h1 id="cartTitle">Your Cart</h1>
 
       <section id="cartEmpty" hidden>
         <p>Your cart is empty. Let’s fix that.</p>
-        <p><a class="button" href="/allproducts.html">Browse products</a></p>
+        <a class="button" href="/allproducts.html">Browse products</a>
       </section>
 
       <section id="cartSection">
@@ -74,7 +74,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="cart-footer">
       <div class="footer-content">
         <div class="footer-logo-nav">
           <a class="footer-logo" href="/index.html">
@@ -94,7 +94,7 @@
         <div class="footer-contact">
           <div class="footer-subscribe">
             <h3>Subscribe to The Grainline</h3>
-            <form name="newsletter" method="post" data-netlify="true" action="/thanks.html#newsletter">
+            <form name="newsletter" method="post" data-netlify="true" action="/thanks-grainline.html">
               <input type="hidden" name="form-name" value="newsletter" />
               <label class="sr-only" for="nl-email">Email</label>
               <input id="nl-email" type="email" name="email" placeholder="Your email address" required />
