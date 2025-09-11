@@ -60,6 +60,7 @@
       }
     </script>
   </head>
+
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <header>
@@ -68,12 +69,12 @@
           <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" />
         </a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <button id="navToggle" class="nav-toggle" aria-label="Menu">
         <svg class="icon icon-24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"></path>
         </svg>
       </button>
-      <nav class="sticky-nav" id="navMenu">
+      <nav id="navMenu" class="sticky-nav">
         <ul class="nav-list">
           <li><a href="/index.html">Home</a></li>
           <li><a href="/allproducts.html">Shop All</a></li>
@@ -103,7 +104,7 @@
     </header>
 
     <main id="main" class="container">
-      <section class="section product-intro">
+      <section class="section product-intro hero-banner">
         <picture class="hero-media">
           <source
             type="image/avif"
@@ -189,7 +190,7 @@
                 </button>
                 <button
                   type="button"
-                  class="thumb selected"
+                  class="thumb"
                   aria-current="true"
                   data-base="/images/us-flag-challenge-coin-display/us-flag-challenge-coin-display-front"
                   data-alt="US flag coin display - Army Field">
@@ -203,7 +204,7 @@
                 </button>
                 <button
                   type="button"
-                  class="thumb selected"
+                  class="thumb"
                   aria-current="true"
                   data-base="/images/us-flag-challenge-coin-display/us-flag-challenge-coin-display-with-coins"
                   data-alt="US flag coin display, with coins">
@@ -217,7 +218,7 @@
                 </button>
                 <button
                   type="button"
-                  class="thumb selected"
+                  class="thumb"
                   aria-current="true"
                   data-base="/images/us-flag-challenge-coin-display/us-flag-challenge-coin-display-angled-view"
                   data-alt="US flag coin display - angled view">
@@ -261,7 +262,6 @@
                   <option value="thin-red-line">Thin Red Line</option>
                 </select>
               </div>
-
               <button id="addToCartBtn" class="button" type="button" aria-label="Add this item to your cart">
                 Add to Cart
               </button>
@@ -290,7 +290,6 @@
         <summary>
           <h2>Shipping & Returns <sup>(Click to Expand)</sup></h2>
         </summary>
-
         <div class="policy-contents">
           <h3>Shipping</h3>
           <p>
@@ -362,7 +361,13 @@
                 <label>Don't fill this out: <input name="bot-field" /></label>
               </p>
               <label class="sr-only" for="nl-email">Email</label>
-              <input id="nl-email" type="email" name="email" autocomplete="email" placeholder="Your email address" required />
+              <input
+                id="nl-email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="Your email address"
+                required />
               <div role="status" aria-live="polite"></div>
               <button type="submit">I'm In!</button>
             </form>
@@ -400,8 +405,8 @@
       </div>
     </footer>
 
+    <!-- Mini-Cart -->
     <div id="miniCartOverlay" class="mini-cart-overlay" aria-hidden="true" hidden></div>
-
     <aside
       id="miniCart"
       class="mini-cart-panel"
@@ -414,9 +419,7 @@
         <h2 id="miniCartTitle">Your Cart</h2>
         <button type="button" class="mini-cart-close" aria-label="Close cart">×</button>
       </header>
-
       <p id="miniCartDesc" class="sr-only">Review items in your cart, update quantities, or proceed to checkout.</p>
-
       <div class="mini-cart-body">
         <div id="miniCartEmpty" class="mini-cart-empty" hidden>
           <p>Your cart's empty. Let's fix that.</p>
@@ -424,7 +427,6 @@
         </div>
         <ul id="miniCartItems" class="mini-cart-items" aria-live="polite" aria-relevant="all"></ul>
       </div>
-
       <footer class="mini-cart-footer">
         <div class="mini-cart-subtotal">
           <span>Subtotal</span>
