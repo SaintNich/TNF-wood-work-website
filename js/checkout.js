@@ -7,6 +7,54 @@ const fmt = (c) => (Number(c)/100).toLocaleString('en-US',{style:'currency',curr
 
 let quote = null;
 
+const statusEl = document.getElementById('checkoutStatus');
+
+// Small debounce helper (kept local to avoid extra imports)
+function debounce(fn, ms = 300) {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+}
+
+// Toggle aria-invalid and write polite status if provided
+function setFieldInvalid(el, invalid, msg) {
+  if (!el) return;
+  if (invalid) {
+    el.setAttribute('aria-invalid','true');
+    if (msg && statusEl) statusEl.textContent = msg;
+  } else {
+    el.removeAttribute('aria-invalid');
+  }
+}
+
+// Validate core checkout fields before payment
+function validateCheckoutFields() {
+  let ok = true;
+  if (statusEl) statusEl.textContent = '';
+
+  const checks = [
+    ['#shipName', 'Enter your full name.'],
+    ['#checkoutEmail', 'Enter a valid email address.'],
+    ['#checkoutPhone', 'Enter a phone number.'],
+    ['#shipAddress1', 'Enter your street address.'],
+    ['#shipCity', 'Enter your city.'],
+    ['#shipState', 'Enter your state.'],
+    ['#shipZip', 'Enter your postal code.'],
+    ['#shipCountry', 'Enter your country.'],
+  ];
+
+  checks.forEach(([sel, msg]) => {
+    const el = document.querySelector(sel);
+    const value = (el?.value || '').trim();
+    const invalid = !value || (sel==='#checkoutEmail' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value));
+    setFieldInvalid(el, invalid, invalid ? msg : '');
+    if (invalid) ok = false;
+  });
+
+  if (!ok && statusEl) statusEl.textContent = statusEl.textContent || 'Please correct the highlighted fields.';
+  return ok;
+}
+
+
 function getShippingAddress() {
   const v = (id) => document.getElementById(id)?.value?.trim() || "";
   return {
@@ -68,6 +116,7 @@ async function initSquare() {
   return items[0]?.options?.orderRef || crypto.randomUUID();
 } */
 
+let quoteAbort;
 async function fetchQuote() {
   const items = getCart();
   if (!items.length) return;
@@ -80,6 +129,10 @@ async function fetchQuote() {
   }
   
   try {
+    // abort stale in-flight requests
+    quoteAbort?.abort();
+    quoteAbort = new AbortController();
+    if (statusEl) statusEl.textContent = '';
     const res = await fetch("/.netlify/functions/quote", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -93,12 +146,13 @@ async function fetchQuote() {
         })),
         address,
       }),
-    });
+    signal: quoteAbort.signal });
     if (!res.ok) throw new Error("Quote failed");
     quote = await res.json();
     renderSummary();
   } catch (e) {
     console.warn("Quote error:", e);
+    if (statusEl) statusEl.textContent = 'We couldn\'t fetch shipping right now. Please check your ZIP and try again.';
     quote = null;
     renderSummary();
   }
@@ -128,7 +182,9 @@ function setPayBusy(busy, label = "Processing…") {
 
 async function onPay(card) {
   const items = getCart();
-  if (!items.length) { alert("Your cart is empty."); return; }
+  if (!items.length) { if (statusEl) statusEl.textContent = 'Your cart is empty.'; return; }
+
+  if (!validateCheckoutFields()) { setPayBusy(false); return; }
 
   const orderRef = items[0]?.options?.orderRef || ensureOrderRef();
   const email = document.getElementById("checkoutEmail")?.value || "";
@@ -136,12 +192,15 @@ async function onPay(card) {
 
   try {
     // 1) Re-quote so client/server totals match
+    if (statusEl) statusEl.textContent = 'Calculating shipping…';
     setPayBusy(true, "Calculating…");
     await fetchQuote();
 
     // 2) Tokenize card
+    if (statusEl) statusEl.textContent = 'Processing payment…';
     setPayBusy(true, "Processing…");
     const { status, token, errors } = await card.tokenize();
+    if (errors && errors.length && statusEl) statusEl.textContent = errors[0]?.message || 'Card validation error.';
     if (status !== "OK" || !token) {
       console.error("[CLIENT TOKEN ERROR]", { status, errors });
       setPayBusy(false);
@@ -208,7 +267,7 @@ function wireAdressListeners() {
   [ "shipState", "shipZip" ]
   .map((id) => document.getElementById(id))
   .filter(Boolean)
-  .forEach((el) => el.addEventListener("change", fetchQuote));
+  .forEach((el) => el.addEventListener("input", debounce(fetchQuote, 300), { passive: true }));
 }
 
 async function init(){

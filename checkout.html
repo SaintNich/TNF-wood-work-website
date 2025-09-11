@@ -1,124 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Checkout • TNF Wood Work</title>
-  <link rel="stylesheet" href="/css/base.css" />
-  <link rel="stylesheet" href="/css/layout.css" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/checkout.css" />
-  <link rel="modulepreload" href="/js/cart.js" />
-  <link rel="modulepreload" href="/js/upload.js" />
-  <script type="module" src="/js/header-cart.js"></script>
-  <script defer src="/js/main.js"></script>
-  <!-- Square SDK (Sandbox). Swap to production CDN + IDs at cutover. -->
-  <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
-  <script>
-    window.SQUARE_APP_ID = "sandbox-sq0idb-RpHq5nEoIp_4myEsyfENyQ";
-    window.SQUARE_LOCATION_ID = "LXN18H6SAZEPM";
-  </script>
-  <script type="module" src="/js/checkout.js"></script>
-</head>
-<body class="is-checkout">
-  <header>
-    <div class="headerlogo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout • TNF Wood Work</title>
+    <link rel="stylesheet" href="/css/app.min.css" />
+    <link rel="stylesheet" href="/css/checkout.css" />
+    <link rel="modulepreload" href="/js/cart.js" />
+    <link rel="modulepreload" href="/js/upload.js" />
+    <script type="module" src="/js/header-cart.js"></script>
+    <script defer src="/js/main.js"></script>
+    <!-- Square SDK (Sandbox). Swap to production CDN + IDs at cutover. -->
+    <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+    <script>
+      window.SQUARE_APP_ID = "sandbox-sq0idb-RpHq5nEoIp_4myEsyfENyQ";
+      window.SQUARE_LOCATION_ID = "LXN18H6SAZEPM";
+    </script>
+    <script type="module" src="/js/checkout.js"></script>
+  </head>
+  <body class="is-checkout">
+    <a class="skip-link" href="#checkoutPage">Skip to main content</a>
+    <header>
+      <div class="headerlogo">
         <a href="/index.html">
-        <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" />
-      </a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <i class="fas fa-bars"></i>
-    </button>
-    <nav class="sticky-nav" id="navMenu">
-      <ul class="nav-list">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/allproducts.html">Shop All</a></li>
-        <li><a href="/contact.html">Contact Us</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/customprojectsgallery.html">Custom Projects Gallery</a></li>
-      </ul>
-    </nav>
-    <img
-      class="vet-owned-logo"
-      src="/images/veteran-owned-flag-logo.svg"
-      alt="Veteran-Owned business logo" />
-  </header>
-
-  <main class="container" id="checkoutPage" aria-labelledby="checkoutTitle">
-    <h1 id="checkoutTitle">Checkout</h1>
-    
-    <!-- Contact -->
-    <section id="orderSummary" aria-label="Order summary"></section>
-    <section aria-label="Contact">
-      
-    </section>
-    
-    <section>
-      <h2>Shipping Information</h2>
-      <div class="field checkout-name">
-        <label for="shipName">Full Name</label>
-        <input id="shipName" type="text" name="full-name" autocomplete="name" required placeholder="John Smith" />
+          <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" />
+        </a>
       </div>
-      <fieldset class="checkout-contact">
-        <legend>Contact</legend>
-        <div class="field checkout-email">
-          <label for="checkoutEmail">Email Address</label>
-          <input id="checkoutEmail" type="email" name="email" autocomplete="email" inputmode="email" required
-            placeholder="youremail@example.com" aria-describedby="email-hint" />
-          <div id="email-hint" class="hint">I'll send any order updates here.</div>
-        </div>
-        <div class="field checkout-phone">
-          <label for="checkoutPhone">Phone Number</label>
-          <input id="checkoutPhone" type="tel" name="phone" autocomplete="tel" inputmode="tel" aria-describedby="tel-hint" />
-          <div id="tel-hint" class="hint">For delivery issues only.</div>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Shipping Address</legend>
-        <div class="checkout-add-combined">
-          <div class="field checkout-add1">
-            <label for="shipAddress1">Address Line 1</label>
-            <input id="shipAddress1" name="address-line1" autocomplete="address-line1" required />
-          </div>
-          <div class="field checkout-add2">
-            <label for="shipAddress2">Address Line 2 <span class="optional">(optional)</span></label>
-            <input id="shipAddress2" name="address-line2" autocomplete="address-line2" />
-          </div>
-        </div>
-        <div class="checkout-csz">
-          <div class="field checkout-city">
-            <label for="shipCity">City</label>
-            <input id="shipCity" name="city" autocomplete="address-level2" required />
-          </div>
-          <div class="field checkout-state">
-            <label for="shipState">State</label>
-            <input id="shipState" name="address-level1" autocomplete="address-level1" maxlength="2" required />
-          </div>
-          <div class="field checkout-zip">
-            <label for="shipZip">Zip Code</label>
-            <input id="shipZip" name="postal-code" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]*" required />
-          </div>
-        </div>
-        <div class="field checkout-country">
-          <label for="shipCountry">Country</label>
-          <input id="shipCountry" name="country" type="text" value="US" readonly />
-        </div>
-      </fieldset>
-    </section>
-    <!-- Payment -->
-    <section aria-label="Payment" style="margin-top:16px">
-      <div id="card-container">
-        <div class="pay-btn">
-          <button id="payBtn" class="button">Pay Now</button>
-          <p class="mini-cart-note">All transactions secure and encrypted via Square.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <svg class="icon icon-24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"></path>
+        </svg>
+      </button>
+      <nav class="sticky-nav" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/allproducts.html">Shop All</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/custom-projects.html">Custom Projects Gallery</a></li>
+        </ul>
+      </nav>
+      <img class="vet-owned-logo" src="/images/veteran-owned-flag-logo.svg" alt="Veteran-Owned business logo" />
+    </header>
 
-  <footer>
+    <main class="container" id="checkoutPage" aria-labelledby="checkoutTitle">
+      <h1 id="checkoutTitle">Checkout</h1>
+
+      <!-- Contact -->
+      <section id="orderSummary" aria-label="Order summary"></section>
+      <div id="checkoutStatus" class="form-status" role="status" aria-live="polite"></div>
+      <section aria-label="Contact"></section>
+      <section>
+        <h2>Shipping Information</h2>
+        <div class="field checkout-name">
+          <label for="shipName">Full Name</label>
+          <input id="shipName" type="text" name="full-name" autocomplete="name" required placeholder="John Smith" />
+        </div>
+        <fieldset class="checkout-contact">
+          <legend>Contact</legend>
+          <div class="field checkout-email">
+            <label for="checkoutEmail">Email Address</label>
+            <input
+              id="checkoutEmail"
+              type="email"
+              name="email"
+              autocomplete="email"
+              inputmode="email"
+              required
+              placeholder="youremail@example.com"
+              aria-describedby="email-hint" />
+            <div id="email-hint" class="hint">I'll send any order updates here.</div>
+          </div>
+          <div class="field checkout-phone">
+            <label for="checkoutPhone">Phone Number</label>
+            <input
+              id="checkoutPhone"
+              type="tel"
+              name="phone"
+              autocomplete="tel"
+              inputmode="tel"
+              aria-describedby="tel-hint" />
+            <div id="tel-hint" class="hint">For delivery issues only.</div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Shipping Address</legend>
+          <div class="checkout-add-combined">
+            <div class="field checkout-add1">
+              <label for="shipAddress1">Address Line 1</label>
+              <input id="shipAddress1" name="address-line1" autocomplete="address-line1" required />
+            </div>
+            <div class="field checkout-add2">
+              <label for="shipAddress2">Address Line 2 <span class="optional">(optional)</span></label>
+              <input id="shipAddress2" name="address-line2" autocomplete="address-line2" />
+            </div>
+          </div>
+          <div class="checkout-csz">
+            <div class="field checkout-city">
+              <label for="shipCity">City</label>
+              <input id="shipCity" name="city" autocomplete="address-level2" required />
+            </div>
+            <div class="field checkout-state">
+              <label for="shipState">State</label>
+              <input id="shipState" name="address-level1" autocomplete="address-level1" maxlength="2" required />
+            </div>
+            <div class="field checkout-zip">
+              <label for="shipZip">Zip Code</label>
+              <input
+                id="shipZip"
+                name="postal-code"
+                autocomplete="postal-code"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                required />
+            </div>
+          </div>
+          <div class="field checkout-country">
+            <label for="shipCountry">Country</label>
+            <input id="shipCountry" name="country" autocomplete="country-name" type="text" value="US" readonly />
+          </div>
+        </fieldset>
+      </section>
+      <!-- Payment -->
+      <section aria-label="Payment" style="margin-top: 16px">
+        <div id="card-container">
+          <div class="pay-btn">
+            <button id="payBtn" class="button">Pay Now</button>
+            <p class="mini-cart-note">All transactions secure and encrypted via Square.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
       <div class="footer-content">
         <div class="footer-logo-nav">
           <a class="footer-logo" href="/index.html">
@@ -130,7 +144,7 @@
               <li><a href="/allproducts.html">Shop All</a></li>
               <li><a href="/contact.html">Contact Us</a></li>
               <li><a href="/about.html">About</a></li>
-              <li><a href="/customprojectsgallery.html">Custom Projects Gallery</a></li>
+              <li><a href="/custom-projects.html">Custom Projects Gallery</a></li>
               <li><a href="/policies.html">Shop Policies</a></li>
             </ul>
           </nav>
@@ -138,25 +152,47 @@
         <div class="footer-contact">
           <div class="footer-subscribe">
             <h3>Subscribe to The Grainline</h3>
-            <form name="grainline" method="post" data-netlify="true" netlify-honeypot="bot-field" action="/thanks-grainline.html">
+            <form
+              name="grainline"
+              method="post"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thanks-grainline.html">
               <input type="hidden" name="form-name" value="grainline" />
-              <p class="sr-only"><label>Don't fill this out: <input name="bot-field"></label></p>
+              <p class="sr-only">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
               <label class="sr-only" for="nl-email">Email</label>
-              <input id="nl-email" type="email" name="email" placeholder="Your email address" required />
+              <input id="nl-email" type="email" name="email" autocomplete="email" placeholder="Your email address" required />
+              <div role="status" aria-live="polite"></div>
               <button type="submit">I'm In!</button>
             </form>
           </div>
           <div class="footer-social">
-            <a href="https://facebook.com/tnfwoodwork" target="_blank" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://tiktok.com/@tnfwoodwork" target="_blank" aria-label="TikTok"
-              ><i class="fab fa-tiktok"></i
-            ></a>
-            <a href="https://youtube.com/@tnfwoodwork" target="_blank" aria-label="YouTube"
-              ><i class="fab fa-youtube"></i
-            ></a>
-            <a href="mailto:josh@tnfwoodwork.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://facebook.com/tnfwoodwork" aria-label="Facebook" rel="noopener" target="_blank">
+              <svg class="icon icon-20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M22 12.06C22 6.5 17.52 2 11.94 2 6.37 2 2 6.5 2 12.06c0 5.04 3.66 9.22 8.44 9.94v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.25 0-1.64.78-1.64 1.58v1.9h2.79l-.45 2.9h-2.34V22c4.78-.72 8.46-4.9 8.46-9.94z"></path>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@tnfwoodwork" aria-label="TikTok" rel="noopener" target="_blank">
+              <svg class="icon icon-20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M21 8.1a7.2 7.2 0 0 1-4.3-1.44v7.25a6.91 6.91 0 1 1-6.9-6.9c.35 0 .69.03 1.02.1v3.1a3.8 3.8 0 1 0 2.7 3.64V2h3.03a7.2 7.2 0 0 0 4.36 4.14v1.96z"></path>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@tnfwoodwork" aria-label="YouTube" rel="noopener" target="_blank">
+              <svg class="icon icon-20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M23 12c0-2.1-.17-3.5-.39-4.4a2.8 2.8 0 0 0-2-2C19.7 5.4 12 5.4 12 5.4s-7.7 0-8.6.2a2.8 2.8 0 0 0-2 2C1.2 8.5 1 9.9 1 12s.17 3.5.39 4.4a2.8 2.8 0 0 0 2 2c.9.2 8.61.2 8.61.2s7.69 0 8.58-.2a2.8 2.8 0 0 0 2-2c.22-.9.39-2.3.39-4.4zM9.75 15.02V8.98L15 12l-5.25 3.02z"></path>
+              </svg>
+            </a>
+            <a href="mailto:josh@tnfwoodwork.com" aria-label="Email">
+              <svg class="icon icon-20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M2 6h20v12H2z"></path>
+                <path d="M2 6l10 7 10-7" fill="none" stroke="currentColor" stroke-width="2"></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -164,5 +200,5 @@
         <p>&copy; 2025 TNF Wood Work. Built to last. Made with grit, heart, and precision.</p>
       </div>
     </footer>
-</body>
+  </body>
 </html>
