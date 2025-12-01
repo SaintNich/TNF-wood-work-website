@@ -4,70 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Page Not Found | TNF Wood Work</title>
-    <link rel="stylesheet" href="/css/app.min.css" />
-    <link rel="modulepreload" href="/js/cart.js" />
-    <script type="module" src="/js/header-cart.js"></script>
-    <script type="module" src="/js/mini-cart.js"></script>
-    <script defer src="/js/main.js"></script>
-    <style>
-      .wrap {
-        min-height: 70vh;
-        display: grid;
-        place-items: center;
-        text-align: center;
-      }
-    </style>
+    <meta
+      name="404"
+      content="" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;800&display=swap" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
+
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
+
     <header>
       <div class="headerlogo">
         <a href="/index.html">
           <img src="/images/TNF-Wood-Work-Logo.svg" alt="TNF Wood Work logo" />
         </a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <svg class="icon icon-24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"></path>
-        </svg>
-      </button>
       <nav class="sticky-nav" id="navMenu">
         <ul class="nav-list">
           <li><a href="/index.html">Home</a></li>
-          <li><a href="/allproducts.html">Shop All</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/custom-projects.html">Custom Projects Gallery</a></li>
+          <li><a href="/past-builds.html">Past Builds</a></li>
+          <li><a href="laser-engraving.html">Laser Engraving</a></li>
         </ul>
       </nav>
-      <a
-        href="/cart.html"
-        id="headerCartLink"
-        class="header-cart-toggle"
-        aria-haspopup="dialog"
-        aria-controls="miniCart"
-        aria-expanded="false">
-        <svg class="icon icon-24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path
-            d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 
-             0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.1 14h9.45c.75 
-             0 1.41-.41 1.75-1.05l3.58-6.49a1 1 0 0 0-.88-1.46H5.21l-.94-2H1v2h2l3.6 
-             7.59-1.35 2.45C4.52 16.37 5.48 18 7 18h12v-2H7.42a.5.5 0 0 1-.42-.75l.78-1.25z" />
-        </svg>
-        <span class="sr-only">Cart</span>
-        <span id="headerCartCount" class="cart-count" aria-live="polite">0</span>
-      </a>
-      <img class="vet-owned-logo" src="/images/veteran-owned-flag-logo.svg" alt="Veteran-Owned business logo" />
+      <div><a href="/custom-build-contact.html" class="btn-link">Start Your Build</a></div>
     </header>
 
-    <main id="main" class="wrap">
-      <div>
-        <h1>Well, that’s not wood.</h1>
+    <main id="main">
+      <div class="hero-wrapper">
+        <picture>
+          <source type="image/avif" srcset="
+                  /images/wood-backdrop@640.avif   640w,
+                  /images/wood-backdrop@1024.avif 1024w,
+                  /images/wood-backdrop@1600.avif 1600w,
+                  /images/wood-backdrop@2000.avif 2000w
+                " />
+          <source type="image/webp" srcset="
+                  /images/wood-backdrop@640.webp   640w,
+                  /images/wood-backdrop@1024.webp 1024w,
+                  /images/wood-backdrop@1600.webp 1600w,
+                  /images/wood-backdrop@2000.webp 2000w
+                " />
+          <img class="hero-img" src="/images/wood-backdrop@1600.jpg" srcset="
+                  /images/wood-backdrop@640.jpg   640w,
+                  /images/wood-backdrop@1024.jpg 1024w,
+                  /images/wood-backdrop@1600.jpg 1600w,
+                  /images/wood-backdrop@2000.jpg 2000w
+                " sizes="100vw" alt="Warm wood-grain backdrop behind TNF Wood Work hero" decoding="async" fetchpriority="high" style="object-fit: cover; width: 100%; height: 100%" />
+        </picture>
+        <section id="hero-section">
+          <h1>Well, that’s not wood.</h1>
         <p>The page you’re looking for isn’t here. Let’s get you back to something solid.</p>
         <p>
-          <a href="/index.html">Go to Home</a> · <a href="/allproducts.html">Shop All</a> ·
-          <a href="/contact.html">Contact</a>
+          <a href="/index.html">Go to Home</a> · <a href="/custom-build-contact.html">Start Your Build</a> ·
+          <a href="laser-engraving.html">Laser Engraving</a>
         </p>
+        </section>
       </div>
     </main>
 
@@ -80,10 +75,8 @@
           <nav class="footer-nav">
             <ul>
               <li><a href="/index.html">Home</a></li>
-              <li><a href="/allproducts.html">Shop All</a></li>
-              <li><a href="/contact.html">Contact Us</a></li>
-              <li><a href="/about.html">About</a></li>
-              <li><a href="/custom-projects.html">Custom Projects Gallery</a></li>
+              <li><a href="/past-builds.html">Past Builds</a></li>
+              <li><a href="laser-engraving.html">Laser  Engraving</a></li>
               <li><a href="/policies.html">Shop Policies</a></li>
             </ul>
           </nav>
@@ -102,7 +95,13 @@
                 <label>Don't fill this out: <input name="bot-field" /></label>
               </p>
               <label class="sr-only" for="nl-email">Email</label>
-              <input id="nl-email" type="email" name="email" autocomplete="email" placeholder="Your email address" required />
+              <input 
+                id="nl-email" 
+                type="email" 
+                name="email" 
+                autocomplete="email" 
+                placeholder="Your email address" 
+                required />
               <div role="status" aria-live="polite"></div>
               <button type="submit">I'm In!</button>
             </form>
@@ -139,43 +138,5 @@
         <p>&copy; 2025 TNF Wood Work. Built to last. Made with grit, heart, and precision.</p>
       </div>
     </footer>
-
-    <div id="miniCartOverlay" class="mini-cart-overlay" aria-hidden="true" hidden></div>
-
-    <aside
-      id="miniCart"
-      class="mini-cart-panel"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="miniCartTitle"
-      aria-describedby="miniCartDesc"
-      hidden>
-      <header class="mini-cart-header">
-        <h2 id="miniCartTitle">Your Cart</h2>
-        <button type="button" class="mini-cart-close" aria-label="Close cart">×</button>
-      </header>
-
-      <p id="miniCartDesc" class="sr-only">Review items in your cart, update quantities, or proceed to checkout.</p>
-
-      <div class="mini-cart-body">
-        <div id="miniCartEmpty" class="mini-cart-empty" hidden>
-          <p>Your cart's empty. Let's fix that.</p>
-          <a class="button" href="/allproducts.html">Browse Products</a>
-        </div>
-        <ul id="miniCartItems" class="mini-cart-items" aria-live="polite" aria-relevant="all"></ul>
-      </div>
-
-      <footer class="mini-cart-footer">
-        <div class="mini-cart-subtotal">
-          <span>Subtotal</span>
-          <strong id="miniCartSubtotal">$0.00</strong>
-        </div>
-        <p class="mini-cart-note">Shipping & tax calculated at checkout.</p>
-        <div class="mini-cart-actions">
-          <a href="/cart.html" id="miniCartViewCartButton" class="button button--secondary">View Cart</a>
-          <a href="/checkout.html" id="miniCartCheckoutBtn" class="button">Proceed to Checkout</a>
-        </div>
-      </footer>
-    </aside>
   </body>
 </html>
