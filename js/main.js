@@ -1,11 +1,11 @@
 // disable laser-engraving link
-const laserEng = document.querySelector('a[href="/laser-engraving.html"]');
+/*const laserEng = document.querySelector('a[href="/laser-engraving.html"]');
 
 laserEng.addEventListener("click", () => {
   event.preventDefault();
   alert("Laser Engraving Coming Soon!");
 });
-
+*/
 // enlarge past-build images
 const builds = document.querySelectorAll(".build");
 const lightBox = document.querySelector(".lightbox");
