@@ -1,11 +1,3 @@
-// disable laser-engraving link
-/*const laserEng = document.querySelector('a[href="/laser-engraving.html"]');
-
-laserEng.addEventListener("click", () => {
-  event.preventDefault();
-  alert("Laser Engraving Coming Soon!");
-});
-*/
 // enlarge past-build images
 const builds = document.querySelectorAll(".build");
 const lightBox = document.querySelector(".lightbox");
@@ -19,23 +11,34 @@ builds.forEach((build, index) => {
   build.addEventListener("click", () => {
     const picture = build.querySelector("picture");
     lightBox.style.display = "flex";
+    lightBox.style.cursor = "pointer";
+    ltBoxContent.style.cursor = "default";
     ltBoxPicture.innerHTML = "";
     ltBoxPicture.appendChild(picture.cloneNode(true));
   });
+
+  build.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      build.click();
+    };
+  });
 });
 
-closeBtn.addEventListener("click", () => {
-  lightBox.style.display = "none";
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
+if (lightBox && closeBtn && ltBoxContent && ltBoxPicture) {
+  closeBtn.addEventListener("click", () => {
     lightBox.style.display = "none";
-  };
-});
+  });
 
-lightBox.addEventListener("click", (e) => {
-  if (e.target === lightBox) {
-    lightBox.style.display = "none";
-  };
-});
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lightBox.style.display = "none";
+    };
+  });
+
+  lightBox.addEventListener("click", (e) => {
+    if (e.target === lightBox) {
+      lightBox.style.display = "none";
+    };
+  });
+};
