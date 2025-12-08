@@ -35,6 +35,7 @@
   --common5-10: clamp(0.5rem, 0.357rem + 0.714vw, 1rem);
   --common75-150: clamp(0.75rem, 0.536rem + 1.071vw, 1.5rem);
   --common100-200: var(--plan-txt);
+  --pricing150-275: clamp(1.5rem, 1.143rem + 1.786vw, 2.75rem);
   --cntr-mrgn: initial auto;
   --cntr-sctn: 1.5rem auto;
   --xxs-spc: 0.5rem;
@@ -57,6 +58,7 @@
   /* buttons */
   --btn-width: clamp(8rem, 7.143rem + 4.286vw, 11rem);
   --btn-height: clamp(2.75rem, 2.679rem + 0.357vw, 3rem);
+  --btn-eng-height: clamp(3.25rem, 3.179rem + 0.357vw, 3.5rem);
   --btn-txt: var(--plcy-test);
   --btn-radius: 2rem;
 
@@ -179,14 +181,6 @@ header {
   color: var(--lt-txt);
 }
 
-.nav-list a p {
-  font-size: var(--hdr-ftr-sm);
-  font-style: italic;
-  color: var(--lt-txt);
-  text-align: end;
-  margin-top: -0.25rem;
-}
-
 .header-btn {
   display: none;
 }
@@ -272,7 +266,12 @@ section {
 #testimonials h2,
 #final-call h2,
 .build-caption h2,
-#build-start h2 {
+#build-start h2,
+#engraved h2,
+#materials h2,
+#different h2,
+#pricing h2,
+#call-to-action h2 {
   text-align: center;
   margin-bottom: var(--xxs-spc);
 }
@@ -280,7 +279,10 @@ section {
 #customer-focus li,
 #guide-intro li,
 #build-options li,
-.policy-text li {
+.policy-text li,
+#engraved li,
+#different li,
+#pricing li {
     padding-left: 0.25rem;
 }
 
@@ -288,7 +290,10 @@ section {
 #guide-intro li::before,
 #build-options li::before,
 .contact-text ul li::before,
-.policy-text li::before {
+.policy-text li::before,
+#engraved li::before,
+#different li::before,
+#pricing li::before {
     content: "🪵 ";
 }
 
@@ -321,7 +326,8 @@ section {
   box-shadow: var(--wood-shadow);
 }
 
-#plan-of-action h2 {
+#plan-of-action h2,
+#plan-of-action .plan-steps {
   background-color: var(--main-blue);
   border-style: inset;
   border-color: var(--main-blue);
@@ -608,6 +614,45 @@ section {
   color: var(--dk-txt);
 }
 
+.hero-cta-eng {
+  align-self: center;
+}
+
+.btn-eng-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-blue);
+    color: var(--lt-txt);
+    text-align: center;
+    border-radius: var(--btn-radius);
+    font-weight: bold;
+    text-decoration: none;
+    height: var(--btn-eng-height);
+    width: var(--btn-width);
+    font-size: var(--btn-txt);
+    border: 2px outset buttonborder;
+}
+
+#pricing ul > p,
+#pricing ul > ul,
+.shipping-note {
+  margin-left: var(--pricing150-275);
+}
+
+.shipping-note {
+  padding-left: var(--common5-10);
+  border-left: 3px solid var(--main-blue);
+  border-radius: var(--radius);
+  font-size: var(--body-txt);
+  font-style: italic;
+}
+
+#pricing h3 {
+  margin-top: var(--common5-10);
+  margin-bottom: var(--common5-10);
+}
+
 footer {
   background-color: var(--dk-bg);
   color: var(--lt-txt);
@@ -794,12 +839,6 @@ footer {
     font-weight: bold;
   }
 
-  .nav-list li:last-of-type a:hover {
-    text-decoration: line-through;
-    font-weight: normal;
-    cursor: not-allowed;
-  }
-
   section {
     max-width: 1400px;
   }
@@ -839,6 +878,12 @@ footer {
   .plan-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .plan-list.laser {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
 
@@ -900,6 +945,32 @@ footer {
   .contact-form {
     width: 50%;
   }
+
+  .pricing-examples {
+  display: flex;
+  gap: var(--common100-200);
+  align-items: center;
+}
+
+.pricing-aside {
+  width: 33%;
+  background-color: var(--dk-bg);
+  color: var(--lt-txt);
+  border-radius: var(--radius);
+  border: inset var(--dk-bg);
+  padding: var(--common5-10);
+}
+
+.pricing-aside h3 {
+  text-align: center;
+  font-size: var(--fs-md);
+}
+
+.pricing-aside p {
+  margin-bottom: var(--common5-10);
+  font-size: var(--fs-sm);
+
+}
 
   .footer-logo {
     max-width: 125px;
