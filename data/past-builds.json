@@ -1,0 +1,109 @@
+{
+  "pastBuilds": [
+    {
+      "title": "Military Shadow Box",
+      "slug": "military-shadow-box",
+      "image": "/images/custom-projects/shadow-box-recreation@800.jpg",
+      "description": "Walnut case with glass front. Built to honor a career with pride and precision.",
+      "tags": ["shadow box", "military", "walnut", "custom build"]
+    },
+    {
+      "title": "Barbell Award Mount",
+      "slug": "barbell-award-mount",
+      "image": "/images/custom-projects/barbell-award@800.jpg",
+      "description": "Maple replica of a 45-lb plate. Engraved for strength and service.",
+      "tags": ["award", "maple", "engraving"]
+    },
+    {
+      "title": "Barrel Top Sign",
+      "slug": "barrel-top-sign",
+      "image": "/images/custom-projects/barrel-top@800.jpg",
+      "description": "Laser-engraved oak barrel top for cigar shop. Branded with purpose.",
+      "tags": ["engraving", "oak", "sign"]
+    },
+    {
+      "title": "Partnership Plaque",
+      "slug": "partnership-plaque",
+      "image": "/images/custom-projects/partnership-plaque@800.jpg",
+      "description": "Maple plaque, laser engraved to mark a strong partnership with USC Law Enforcement.",
+      "tags": ["plaque", "engraving", "maple"]
+    },
+    {
+      "title": "Custom Hanging Sign",
+      "slug": "custom-hanging-sign",
+      "image": "/images/custom-projects/7-decisions@800.jpg",
+      "description": "Walnut piece engraved with the 7 Decisions. Made to last, like the message.",
+      "tags": ["engraving", "sign", "walnut"]
+    },
+    {
+      "title": "End of Service Award",
+      "slug": "end-of-service-award",
+      "image": "/images/custom-projects/end-of-service-award@800.jpg",
+      "description": "Stained pine, CNC engraved. A final send-off with meaning.",
+      "tags": ["engraving", "award", "pine"]
+    },
+    {
+      "title": "Custom Inlay Team Gift",
+      "slug": "custom-inlay-team-gift",
+      "image": "/images/custom-projects/moose-inlay@800.jpg",
+      "description": "Walnut inlay, hand-fit with laser-cut signatures. Built for a team leader that earned it.",
+      "tags": ["inlay", "walnut", "team gift"]
+    },
+    {
+      "title": "Custom Bottle Opener",
+      "slug": "custom-bottle-opener",
+      "image": "/images/custom-projects/hanging-bottle-opener@800.jpg",
+      "description": "Wall-mounted oak, engraved with a logo and cap-catcher. Clean and functional.",
+      "tags": ["bottle opener", "engraving", "oak"]
+    },
+    {
+      "title": "Police Equipment Storage Shelf",
+      "slug": "police-equipment-storage",
+      "image": "/images/custom-projects/police-equipment-storage@800.jpg",
+      "description": "Iron pipe hooks, engraved nameplates, and flag panel door. Built for everyday duty.",
+      "tags": ["organization", "police", "custom build"]
+    },
+    {
+      "title": "Custom Challenge Coins",
+      "slug": "custom-challenge-coins",
+      "image": "/images/custom-projects/dumpster-coins@800.jpg",
+      "description": "Laser-engraved oak coins to recognize teammates in the thick of it.",
+      "tags": ["challenge coins", "engraving", "oak"]
+    },
+    {
+      "title": "Antique Bench Repair",
+      "slug": "antique-bench-repair",
+      "image": "/images/custom-projects/antique-bench-wood-replacement@800.jpg",
+      "description": "Cedar replacements brought this iron-backed bench back to life.",
+      "tags": ["repair", "cedar", "furniture"]
+    },
+    {
+      "title": "Lamp Base Recreation",
+      "slug": "lamp-base-recreation",
+      "image": "/images/custom-projects/lamp-base@800.jpg",
+      "description": "Walnut base CNC-milled to replace a damaged original. Restoration done right.",
+      "tags": ["restoration", "walnut", "CNC"]
+    },
+    {
+      "title": "Custom Desk Base",
+      "slug": "custom-desk-base",
+      "image": "/images/custom-projects/desk-base@800.jpg",
+      "description": "Pin base crafted to match a marble top. Strong lines, clean fit.",
+      "tags": ["desk", "custom build", "hardwood"]
+    },
+    {
+      "title": "Tufting Frame",
+      "slug": "tufting-frame",
+      "image": "/images/custom-projects/tufting-frame@800.jpg",
+      "description": "Square, sturdy, and built for repeated textile work.",
+      "tags": ["frame", "textile", "custom build"]
+    },
+    {
+      "title": "K9 Etched Glass",
+      "slug": "k9-etched-glass",
+      "image": "/images/custom-projects/k9-glass-etching@800.jpg",
+      "description": "Etched drinking glass featuring USC-PD's K9 unit. A nod to four-legged service.",
+      "tags": ["engraving", "glass", "k9"]
+    }
+  ]
+}
