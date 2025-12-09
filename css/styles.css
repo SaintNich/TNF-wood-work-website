@@ -442,23 +442,58 @@ section {
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
+.contact-form input[type="tel"],
 .contact-form textarea {
   border-radius: var(--radius);
   padding: var(--common5-10);
   background-color: var(--lt-bg);
   color: var(--dk-txt);
   font-family: "Lato", sans-serif;
+  margin-bottom: var(--common5-10);
+}
+
+.contact-form textarea {
+  border: 2px inset rgb(118, 118, 118);
 }
 
 .contact-form input[type="text"]::placeholder,
 .contact-form input[type="email"]::placeholder,
+.contact-form input[type="tel"]::placeholder,
 .contact-form textarea::placeholder {
   font-family: "Lato", sans-serif;
   color: var(--dk-txt);
 }
 
-.contact-form .btn-link {
-  margin: var(--common75-150) auto;
+.radio-answers,
+.file-upload,
+.form-optin {
+  border-bottom: 1px solid var(--dk-bg);
+}
+
+.radio-answers {
+  display: flex;
+}
+
+.radio-selection {
+  min-width: 220px;
+  margin-left: var(--common5-10);
+  margin-right: var(--common5-10);
+  margin-bottom: var(--common5-10);
+}
+
+.form-note {
+  font-size: var(--body-txt);
+  font-style: italic;
+}
+
+.form-optin {
+  margin-bottom: var(--common5-10);
+}
+
+.contact-form .btn-link,
+.contact-form .btn-eng-link {
+  margin: var(--common5-10) auto;
+  cursor: pointer;
 }
 
 .build-email {
@@ -746,6 +781,33 @@ footer {
   font-size: var(--hdr-ftr-sm);
 }
 
+#thank-you {
+  display: flex;
+  flex-direction: column;
+}
+
+#thank-you p {
+  margin-bottom: var(--common5-10);
+}
+
+.signature {
+  align-self: flex-end;
+}
+
+.not-found {
+  text-align: center;
+}
+
+.not-found a {
+  text-decoration: none;
+  color: var(--lt-txt);
+}
+
+.not-found a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .icon {
   width: 1em;
   height: 1em;
@@ -950,29 +1012,33 @@ footer {
   display: flex;
   gap: var(--common100-200);
   align-items: center;
-}
+  }
 
-.pricing-aside {
+  .pricing-aside {
   width: 33%;
   background-color: var(--dk-bg);
   color: var(--lt-txt);
   border-radius: var(--radius);
   border: inset var(--dk-bg);
   padding: var(--common5-10);
-}
+  }
 
-.pricing-aside h3 {
+  .pricing-aside h3 {
   text-align: center;
   font-size: var(--fs-md);
-}
+  }
 
-.pricing-aside p {
+  .pricing-aside p {
   margin-bottom: var(--common5-10);
   font-size: var(--fs-sm);
 
-}
+  }
 
   .footer-logo {
     max-width: 125px;
+  }
+
+  #thank-you {
+    width: 60%;
   }
 } 
