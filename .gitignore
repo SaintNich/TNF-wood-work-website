@@ -1,6 +1,8 @@
 .DS_Store
 node_modules/
 dist/
+images/originals/
+images-template-with-watermark.xcf
 *.log
 # Local Netlify folder
 .netlify
