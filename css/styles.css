@@ -124,6 +124,7 @@ header {
   background-color: var(--dk-bg);
   color: var(--lt-txt);
   padding: 0 var(--space-2);
+  max-height: 150px;
 }
 
 .headerlogo {
@@ -209,6 +210,10 @@ section {
 
 #hero-actions {
   margin-bottom: var(--space-1);
+}
+
+#hero-actions > h3 {
+  text-align: center;
 }
 
 .hero-cta {
@@ -552,6 +557,7 @@ section {
 }
 
 .builds-intro > .past-builds-helper {
+  display: none;
   text-align: end;
   font-size: var(--fs-xxs);
   font-style: italic;
@@ -578,6 +584,7 @@ section {
 
 /* Lightbox */
 .lightbox {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -697,6 +704,7 @@ footer {
 
 .footer-content {
   max-width: 100vw;
+  max-height: 175px;
 }
 
 .footer-logo-nav {
@@ -822,7 +830,6 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    margin-top: var(--space-3);
   }
 
   .footer-logo-nav {
@@ -871,6 +878,10 @@ footer {
 
   .build {
     min-height: 575px;
+  }
+
+  .builds-intro > .past-builds-helper {
+    display: block;
   }
 
   .not-found-section > .cta-container {
@@ -923,5 +934,6 @@ footer {
 
   .lightbox-picture {
     width: 45%;
+    max-width: 520px;
   }
 }
