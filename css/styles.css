@@ -124,7 +124,7 @@ header {
   background-color: var(--dk-bg);
   color: var(--lt-txt);
   padding: 0 var(--space-2);
-  max-height: 150px;
+  max-height: 175px;
 }
 
 .headerlogo {
@@ -703,8 +703,9 @@ footer {
 }
 
 .footer-content {
-  max-width: 100vw;
+  max-width: 1440px;
   max-height: 175px;
+  margin: 0 auto;
 }
 
 .footer-logo-nav {
