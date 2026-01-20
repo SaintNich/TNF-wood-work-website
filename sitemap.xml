@@ -8,13 +8,10 @@
 
   <!-- Core Pages -->
   <url>
-    <loc>https://www.tnfwoodwork.com/custom-build-contact.html</loc>
+    <loc>https://www.tnfwoodwork.com/contact.html</loc>
   </url>
   <url>
     <loc>https://www.tnfwoodwork.com/laser-engraving.html</loc>
-  </url>
-  <url>
-    <loc>https://www.tnfwoodwork.com/laser-contact.html</loc>
   </url>
   <url>
     <loc>https://www.tnfwoodwork.com/past-builds.html</loc>
@@ -25,13 +22,7 @@
 
   <!-- Confirmation Pages -->
   <url>
-    <loc>https://www.tnfwoodwork.com/thanks-custom-build.html</loc>
-  </url>
-  <url>
-    <loc>https://www.tnfwoodwork.com/thanks-engraving.html</loc>
-  </url>
-  <url>
-    <loc>https://www.tnfwoodwork.com/thanks-newsletter.html</loc>
+    <loc>https://www.tnfwoodwork.com/thanks.html</loc>
   </url>
 
   <!-- List 404 -->
