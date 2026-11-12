@@ -4,8 +4,12 @@ dist/
 images/originals/
 images-template-with-watermark.xcf
 *.log
+
 # Local Netlify folder
 .netlify
 .git-backup-*.zip
 .git status
 .git-backup.tgz
+
+# WebStorm
+.idea/
