@@ -646,8 +646,23 @@ section {
   margin-bottom: var(--space-3);
 }
 
+#privacy {
+  width: 100%;
+}
+
+#shop-policies > #privacy > .build-button {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-3);
+}
+
 #shop-policies > .build-button > h3 {
   font-size: var(--fs-md);
+}
+
+#shop-policies > #privacy > .build-button > p {
+  font-size: var(--fs-xs);
+  font-style: italic;
 }
 
 .policy-item {
