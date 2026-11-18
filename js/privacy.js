@@ -67,7 +67,7 @@ function initializePrivacy() {
         showConsentBanner();
     }
 
-    initializePrivacyPreferences()
+    initializePrivacyPreferences();
 
     initializeConsentButtons();
 
