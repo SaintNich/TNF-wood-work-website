@@ -114,6 +114,18 @@ function initializeConsentButtons() {
     });
 }
 
+function initializeConsentSync() {
+    window.addEventListener("storage", (event) => {
+       if (event.key === CONSENT_KEY) {
+           if (event.newValue === "declined" && analyticsStarted === true) {
+               withdrawAnalyticsConsent();
+           } else if (event.newValue === "accepted") {
+               loadAnalytics();
+           }
+       }
+    });
+}
+
 function gtag(){
     window.dataLayer.push(arguments);
 }
