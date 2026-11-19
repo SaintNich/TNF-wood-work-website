@@ -71,6 +71,8 @@ function initializePrivacy() {
 
     initializeConsentButtons();
 
+    initializeConsentSync();
+
     loadAnalytics();
 }
 
