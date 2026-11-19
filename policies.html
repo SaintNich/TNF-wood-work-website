@@ -31,6 +31,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;800&display=swap" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/privacy.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -44,11 +45,6 @@
             "@type": "ImageObject",
             "url": "https://www.tnfwoodwork.com/images/og-default.jpg"
           }
-        },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.tnfwoodwork.com/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
         }
       }
     </script>
@@ -111,6 +107,21 @@
           <h2>The TNF<br />Standard</h2>
         </section>
       </div>
+
+      <section id="privacy-consent">
+        <div class="privacy-button">
+          <button id="privacy-close" type="button" aria-label="Close cookie notice">X</button>
+        </div>
+        <div class="privacy-text">
+          <h2>Your Privacy Matters</h2>
+          <p>We use optional Google Analytics cookies to understand how visitors use our website and improve their experience. You can accept or decline without affecting your ability to use our site.</p>
+          <p>You can change your choice at any time through Cookie Preferences. Read our <a href="/policies.html#privacy">Privacy Policy</a> for more information.</p>
+        </div>
+        <div class="privacy-buttons">
+          <button id="privacy-decline" class="btn-link">Decline</button>
+          <button id="privacy-accept" class="btn-link">Accept Analytics</button>
+        </div>
+      </section>
 
       <section id="hero-actions">
         <p class="standard-intro">
@@ -212,6 +223,77 @@
             </p>
           </div>
         </article>
+
+        <section id="privacy">
+          <div class="build-button">
+            <h3>Privacy & Data Collection</h3>
+            <p>Last Updated: November 12, 2026</p>
+          </div>
+
+          <article class="policy-item">
+            <h4>Information We Collect</h4>
+            <div class="policy-text">
+              <p>
+                When you contact TNF Wood Work or request a custom project, we may collect your name, email address, phone number, project specifications, reference images, and other information you voluntarily provide.
+              </p>
+              <p>
+                Our website may also collect technical information, such as pages visited, general geographic location, device type, and how visitors find and interact with our website.
+              </p>
+            </div>
+          </article>
+
+          <article class="policy-item">
+            <h4>How We Use Your Information</h4>
+            <div class="policy-text">
+              <p>
+                We use customer information to respond to inquiries, develop estimates, discuss project requirements, process orders, coordinate delivery or pickup, and provide customer support.
+              </p>
+              <p>
+                We may also use aggregated website activity information to understand how visitors discover TNF Wood Work and identify opportunities to improve our website and services.
+              </p>
+              <p>
+                We do not sell customer personal information or use contact information submitted for project inquiries to send unsolicited marketing messages.
+              </p>
+            </div>
+          </article>
+
+          <article class="policy-item">
+            <h4>Website Analytics & Cookies</h4>
+            <div class="policy-text">
+              <p>
+                Our website uses optional Google Analytics cookies to help us understand website traffic and visitor activity. These cookies are only enabled after you accept analytics tracking. Information collected may include pages viewed, approximate location, device information, and interactions with our website.
+              </p>
+              <p>
+                This information helps us evaluate website performance and improve the experience for visitors.
+              </p>
+              <p>
+                You can accept, decline, or change your analytics preferences at any time without affecting your ability to use our website. You can also manage cookies through your browser settings. Additional information about Google's data practices is available in <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
+              </p>
+              <button type="button" id="privacy-preferences" class="btn-link">Cookie Preferences</button>
+            </div>
+          </article>
+
+          <article class="policy-item">
+            <h4>Information Sharing & Security</h4>
+            <div class="policy-text">
+              <p>
+                TNF Wood Work uses trusted service providers to operate our website and fulfill customer requests. These may include Netlify for website hosting and contact-form processing, Square for payment processing, and Google for website analytics.
+              </p>
+              <p>
+                We share information with these providers as necessary to deliver their services. We may also disclose information when required by law.
+              </p>
+              <p>
+                We take reasonable precautions to protect customer information, but no method of electronic storage or transmission can be guaranteed completely secure.
+              </p>
+              <p>
+                We retain customer information for as long as reasonably necessary to manage projects, maintain business records, and satisfy applicable legal obligations.
+              </p>
+              <p>
+                Customers may contact us at <a href="mailto:josh@tnfwoodwork.com">josh@tnfwoodwork.com</a> to request access to, correction of, or deletion of their personal information, subject to applicable recordkeeping requirements.
+              </p>
+            </div>
+          </article>
+        </section>
       </section>
     </main>
 
@@ -228,6 +310,7 @@
             <li><a href="/past-builds.html">Past Builds</a></li>
             <li><a href="/laser-engraving.html">Laser Engraving</a></li>
             <li><a href="/policies.html">The TNF Standard</a></li>
+            <li><a href="/policies.html#privacy">Privacy Policy</a></li>
           </ul>
         </nav>
         <div class="footer-social">
