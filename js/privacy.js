@@ -53,7 +53,9 @@ function withdrawAnalyticsConsent() {
     });
 
     document.cookie = "_ga=; Max-Age=0; path=/";
+    document.cookie = "_ga=; Max-Age=0; path=/; domain=tnfwoodwork.com";
     document.cookie = "_ga_GSK09E6DTZ=; Max-Age=0; path=/";
+    document.cookie = "_ga_GSK09E6DTZ=; Max-Age=0; path=/; domain=tnfwoodwork.com";
 
     window.location.reload();
 }
