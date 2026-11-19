@@ -129,6 +129,7 @@ header {
 
 .headerlogo {
   width: 15%;
+  max-width: 225px;
 }
 
 .headerlogo img,
